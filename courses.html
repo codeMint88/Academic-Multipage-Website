@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Multipurpose Website</title>
+
+  <!-- ICONSOUT cdn -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/courses.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/post.css">
+  <link rel="stylesheet" href="css/message.css">
+  <link rel="stylesheet" href="css/404.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <script src="JS/script.js" defer></script>
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="header_container">
+      <div class="header_slide_container">
+        <nav class="nav_container">
+          <figure class="logo_container">
+            <img class="logo" src="/image/logo_200x200.png" alt="School logo" width="200" height="200">
+          </figure>
+
+          <!-- aria-controls shows that this button controls the nav_menu. sr-only hides things from sided users but not the screen readers i.e it's visually invisibl but screen readers can read it-->
+          <button aria-controls="nav_menu" aria-expanded="false" class="mobile_nav_toggle"><span
+              class="sr-only">Menu</span></button>
+          <!-- The menu above disappeared from my screen when I added id="nav_menu to the nav_meu class. I think the sr-only and id="nav_menu works together to get this done -->
+
+          <div data-visible="false" id="nav_menu" class="nav_menu">
+            <a class="nav_list" href="/index.html">
+              <!-- aria-hidden hides this element from the screeen reader so it won't read it out loud. -->
+              <i class="fa-solid fa-house" aria-hidden="true"></i>
+              <p>Home</p>
+            </a>
+            <a class="nav_list" href="/courses.html">
+              <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+              <p>Courses</p>
+            </a>
+            <a class="nav_list" href="/contact.html">
+              <i class="fa-solid fa-address-book" aria-hidden="true"></i>
+              <p>Contact</p>
+            </a>
+            <a class="nav_list" href="/about.html">
+              <i class="fa-solid fa-tablet" aria-hidden="true"></i>
+              <p>About</p>
+            </a>
+          </div>
+        </nav>
+
+        <!-- Header Details -->
+
+        <div class="header_details">
+          <div class="header_details_container_flex">
+            <div class="header_detail_container">
+              <h1 class="hearder_h1">
+                <span class="hearder_h1_b1">School</span>
+                <span class="hearder_h1_b2"> admission</span>
+                open for 2023
+              </h1>
+
+              <div class="header_details_list_container">
+                <div class="header_details_list list1">
+                  <div class="list_point">
+                    <figure class="list_point_img_container">
+                      <img class="list_point_img" src="image/bullet3_200x200.png" alt="bullet image" width="200"
+                        height="200">
+                    </figure>
+                    <div class="list_details">
+                      <h5> Our school has a green play ground</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="header_details_list list2">
+                  <div class="list_point">
+                    <figure class="list_point_img_container">
+                      <img class="list_point_img" src="Image/bullet2_338x338.jpg" alt="bullet image" width="338"
+                        height="338">
+                    </figure>
+                    <div class="list_details">
+                      <h5> Our school has the best education plan</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="header_details_list list 3">
+                  <div class="list_point">
+                    <figure class="list_point_img_container">
+                      <img class="list_point_img" src="Image/bullet1_200x200.png" alt="bullet image" width="200"
+                        height="200">
+                    </figure>
+                    <div class="list_details">
+                      <h5> Our school has world class faculty</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div>
+              <button class="ripple_button enrol_ripple_btn">
+                <p>Enrol Now!</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="header_section">
+    <div class="header_section_container">
+
+      <div class="social_media_analytics">
+        <div class="social_media_stats">
+          <div class="social_media_content">
+            <p class="social_media_p"> Social Media Analytics</p>
+            <div class="icon_container">
+              <!-- Each social media container -->
+
+              <div class="icons twitter">
+                <i class="fab fa-twitter"></i>
+                <div class="icon_content">
+                  <div class="stats" data-target="9160"></div>
+                  <small class="social_media_small">Followers</small>
+                </div>
+              </div>
+
+              <div class="icons facebook">
+                <i class="fab fa-facebook"></i>
+                <div class="icon_content">
+                  <div class="stats" data-target="3902"></div>
+                  <small class="social_media_small">Fans</small>
+                </div>
+              </div>
+
+              <div class="icons linkedIn">
+                <i class="fab fa-linkedin"></i>
+                <div class="icon_content">
+                  <div class="stats" data-target="6570"></div>
+                  <small class="social_media_small">Connections</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header_search_widget">
+        <div class="search-container">
+          <input type="text" class="input" placeholder="Search...">
+          <button class="btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <main class="course_page">
+
+    <!-- Courses Page -->
+    <section>
+      <div class="section_title">
+        <h1 id="tab_title">Course Catelogue</h1>
+      </div>
+      <div class="section_title_underline"></div>
+      <div class="courses_container container" id="courses_container">
+        <!-- Cards -->
+        <div class="courses_card">
+          <div class="card_header animated_bg" id="course_header"> &nbsp; </div>
+          <div class="card_content">
+            <h3 class="card_title animated_bg animated_bg_text" id="title"> &nbsp; </h3>
+            <p class="card_excerpt" id="excerpt">
+              &nbsp;
+              <span class="animated_bg animated_bg_text">&nbsp;</span>
+              <span class="animated_bg animated_bg_text">&nbsp;</span>
+              <span class="animated_bg animated_bg_text">&nbsp;</span>
+            </p>
+            <div class="course_link animated_bg" id="course_link">&nbsp;</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <script src="JS/courses.js"></script>
+
+  <footer>
+    <div class="footer_up">
+      <div class="footer_toggle">
+        <i class="footer_close uil uil-times"></i>
+      </div>
+
+      <div class="footer_container_up ">
+        <figure class="logo_container">
+          <img class="logo" src="/image/logo_200x200.png" alt="School logo" width="200" height="200">
+          <figcaption class="sr-only">School logo</figcaption>
+        </figure>
+        <div class="footer_content">
+          <div class="first_content">
+            <ul class="content_details">
+              <h3> Mobile App</h3>
+              <li> <a href="">Features</a></li>
+              <li> <a href="">Live share</a></li>
+              <li> <a href="">Video records</a></li>
+            </ul>
+          </div>
+          <div class="seconnd_content">
+            <ul class="content_details">
+              <h3> Community</h3>
+              <li> <a href="">Featured articles</a></li>
+              <li> <a href="">The portal</a></li>
+              <li> <a href="">Live events</a></li>
+            </ul>
+          </div>
+          <div class="third_content">
+            <ul class="content_details">
+              <h3> Company</h3>
+              <li> <a href="">About us</a></li>
+              <li> <a href="">Contact us</a></li>
+              <li> <a href="">History</a></li>
+            </ul>
+          </div>
+          <div class="fourth_content">
+            <div class="login">
+              <button class="ripple_button"> Login </button>
+            </div>
+            <div class="sign_up">
+              <button class="ripple_button sign_up_btn ">Sign Up</button>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <hr>
+
+    </div>
+
+    <div class="footer_down">
+      <div class="footer_toggle">
+        <i class="footer_open uil uil-bars"></i>
+      </div>
+
+      <div class="footer_down_container">
+        <div class="footer_down_left">
+          <p>&copy; Wilson College, <span>2023</span>. We &#10084;&#65039; our students!
+          <p>
+        </div>
+        <div class="footer_down_right">
+          <p>Follow us:</p>
+          <div class="footer_socials">
+            <figure class="socials_container">
+              <img class="logo" src="image/Social1_512x512.png" alt="Facebook icon" width="512" height="512">
+              <figcaption class="sr-only">Facebook icon</figcaption>
+            </figure>
+
+            <figure class="socials_container">
+              <img class="logo" src="image/Social2_512x512.png" alt="Youtobe icon" width="512" height="512">
+              <figcaption class="sr-only">Youtobe icon </figcaption>
+            </figure>
+
+            <figure class="socials_container">
+              <img class="logo" src="image/Social3_512x512.png" alt="LinkedIn icon" width="512" height="512">
+              <figcaption class="sr-only">LinkedIn icon </figcaption>
+            </figure>
+
+            <figure class="socials_container">
+              <img class="logo" src="image/Social4_512x512.png" alt="Twitter icon" width="512" height="512">
+              <figcaption class="sr-only"> Twitter icon </figcaption>
+            </figure>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,2180 @@
+@import url(//db.onlinewebfonts.com/c/7bd7f049ab12f7efc10d48e5fa57a618?family=MijaW03-Bold);
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;1,300&family=Signika+Negative:wght@400;500;600;700&display=swap');
+
+/* Basic Default for my Projects */
+/* Box sizing rules */
+
+:root {
+  /* Colors and Fonts Template Styling using Variables */
+  --light-ash: #e0e0e0;
+  --heavy-ash: #999;
+  --green-gray-bg: #BCD4BD;
+  --font-gray-color: #333;
+  --border-style: 2px solid red;
+  --yellow-background: #feb447;
+  --light-yellow: #feb447;
+
+  /* Other colours */
+  --unique-brown1: #393646;
+  --unique-brown4: #F4EEE0;
+
+  --color-success: #00bf8e;
+  --color-warning: #f7c94b;
+  --color-danger: #f75842;
+  --color-about: #ff4500;
+  --color-post: #FF9F55;
+  --color-white: #fff;
+  --color-light: rgba(255, 255, 255, 0.7);
+  --color-black: #000;
+  --color-black1: #40514E;
+
+  --color-bg: #986D8E;
+  --color-bg-primary: #faf9f4;
+  --color-bg2: #E9D5DA;
+  --color-bg4: #e6e7ec;
+  --color-bg-transparent: hsl(0 0% 50% / 0.1);
+
+  --about-col1: #B1A994;
+  --about-col2: #D6D0C7;
+  --about-col3: #E4E4E4;
+  --about-col4: #F5F4F0;
+
+  --nice-font-colour2: #6d7c90;
+  --text-shadow: 1px 1px 1px #000;
+  --blue-box-shadow: 0 4px 24px 0 rgba(103, 151, 255, .1),
+    0 12px 64px 0 rgba(103, 151, 255, .1);
+
+  --container-width-lg: 87%;
+  --container-width-md: 97%;
+  --container-width-sm: 100%;
+
+	--transition: all 400ms ease;
+
+  --Mija: MijaW03-Bold;
+  --my-best-font: 'Signika Negative';
+  --font-awesome: "Font Awesome 5 free";
+  --rubik-font: 'Rubik', sans-serif;
+
+  --html-bacground-color: linear-gradient(
+    to right,
+    hsla(44, 97%, 88%, 0.5), hsla(0, 86%, 89%, 0.35), hsla(240, 64%, 89%, 0.5)
+  );
+
+
+  --spacing: 0.08rem;
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  list-style: none;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+h1 {
+  letter-spacing: var(--spacing);
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  overflow-x: hidden;
+  font-family: var(--my-best-font), 'Alegreya Sans', sans-serif;
+  text-rendering: optimizeSpeed;
+  line-height: 1.4;
+  letter-spacing: 0.013rem;
+  font-size: calc(14px + (22 - 14) * ((100vw - 300px) / (1600 - 300)));
+  color: var(--color-black1);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+a {
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* Utility classes */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: 80rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  /* added line */
+  border: 0;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
+
+/*  global classes */
+
+main {
+  display: grid;
+  gap: 2rem;
+  place-items: center;
+  text-align: center;
+  background-color: rgba(97, 97, 97, 0.1);
+
+  box-shadow: var(--heavy-box-shadow);
+  border-radius: 5px;
+  margin-inline: 15px;
+  max-width: 100vw;
+  min-height: 100vh;
+  padding-inline: 0.8rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-family: var(--Mija);
+  /* font-size: 1.8em; */
+  font-size: clamp(1.5em, 3vw, 1.8em);
+  margin: 0.6em 0 0.2rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+@media screen and (width < 600px) {
+  .main_p {
+    font-size: clamp(1.1em,3.5vw,1.5em);
+  }
+}
+
+/* For buttons */
+
+.btn_origin {
+  display: inline-block;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: 0.8rem 1.25rem;
+  border: 1px solid transparent;
+  font-weight: 500;
+  transition: var(--transition)
+}
+
+.btn_origin:hover {
+  background: transparent;
+  color: var(--color-black1);
+  border-color: var(--color-black);
+}
+
+.btn-primary {
+  background-color: var(--color-danger);
+  color: var(--color-white);
+}
+
+
+/* Animation on scroll starts here */
+
+.hide_scroll_animation {
+  opacity: 0;
+  filter: blur(3px);
+  transition: all 1s;
+}
+
+/* any element that also has the from_left class translates from the left on scroll */
+.hide_scroll_animation.from_left {
+  transform: translateX(-100%);
+}
+
+
+.hide_scroll_animation.from_top {
+  transform: translateY(-10%);
+}
+
+
+.hide_scroll_animation.scale_from_top {
+  transform: scaleX(0.5);
+}
+
+@media screen and (width <= 600px) {
+  .hide_scroll_animation.from_top {
+    transform: translateY(-5%);
+  }
+}
+
+.show_scroll_animation {
+  opacity: 1;
+  filter: blur(0);
+}
+
+
+.show_scroll_animation.from_left {
+  transform: translateX(0);
+}
+
+.show_scroll_animation.scale_from_top {
+  transform: scaleX(1);
+}
+
+
+.show_scroll_animation.from_top {
+  transform: translateY(0);
+}
+
+
+/* Ripple button Starts here */
+
+.ripple_button {
+  position: relative;
+  border: none;
+  background-color: var(--unique-brown1);
+  padding: 4px 9px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 10px;
+  /* text-transform: uppercase; */
+  cursor: pointer;
+  letter-spacing: 0.04rem;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+  color: var(--unique-brown4);
+  overflow: hidden;
+}
+
+.ripple_button:focus-visible {
+  outline: none;
+}
+
+.ripple_button:active {
+  scale: 0.98;
+}
+
+.ripple_button .circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: scale 0.5s ease-out;
+}
+
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+/* Ripple button Ends here */
+
+
+
+/* For title underline */
+
+.general_underline .underline {
+  height: 0.25rem;
+  width: 6em;
+  background: var(--yellow-background);
+  margin-inline: auto;
+  border-radius: 20px;
+}
+
+.general_underline .h1_underline {
+  margin-bottom: 0.8em;
+}
+
+.section_title_underline {
+  height: 0.25rem;
+  width: 6em;
+  background: var(--yellow-background);
+  margin-inline: auto;
+  border-radius: 20px;
+}
+
+.section_title h1 {
+  margin-bottom: 0.6em;
+}
+
+
+
+/* 
+===============
+CSS starts here 
+===============
+*/
+/* 
+===============
+CSS starts here 
+===============
+*/
+
+html {
+  background: var(--html-bacground-color);
+}
+
+
+
+/* 
+===============
+Header 
+===============
+*/
+/* 
+===============
+Header
+===============
+*/
+
+.header {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+  transition: 0.19s ease-in-out;
+  box-shadow: var(--blue-box-shadow);
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -3;
+  background-image: var(--backgroundImg, url("/Image/school2_2100x1400-transformed.jpeg"));
+  background-size: cover;
+  transition: 0.4s ease;
+}
+
+
+@media only screen and (width < 1200px) {
+  .header::after {
+    background-position: center;
+  }
+}
+
+/***************** 
+Why the website content is displaying over the navbar when scrolling?
+In your case you should add a z-index property for the header element. By default if the element z-index is not specified it will layer elements by the order of declaration (last html element with position: absolute/fixed will overflow previous elements with position: absolute/fixed). Try specifying the z-index property for the header header {
+  z-index: 100;
+} in the css file. 
+******************/
+
+
+
+@media only screen and (width < 768px) {
+  .header {
+    z-index: 100;
+  }
+}
+
+
+/* Darkens and covers the image a lil bit */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right,
+  rgb(0 0 0 / .52),
+  rgb(0 0 0 / .3),
+  rgb(0 0 0 / .2),
+  rgb(0 0 0 / .6));
+  z-index: -2;
+}
+
+
+
+
+/* 
+===============
+Nav starts here
+===============
+*/
+/* 
+===============
+Nav starts here
+===============
+*/
+
+
+.header_slide_container .nav_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_container .logo_container {
+  width: 3.8em;
+  height: 3.8em;
+  border-radius: 50%;
+  margin: min(1.8rem, 5vh, 8rem);
+}
+
+.nav_container .logo_container .logo {
+  width: 100%;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.nav_container .nav_menu {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3rem;
+  /* If the browser does not support backdrop, it falls back to this background colour - a dark transparent mode */
+  background-color: hsl(0 0% 0% / 0.83);
+  border-radius: 0 0 0 40px;
+}
+
+@supports (backdrop-filter: blur(1.9rem)) {
+  .nav_container .nav_menu {
+    /* 0 for the colour, 0% for the saturation, 100% for more whitish, / 0.1 gives a transparent background */
+    background-color: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(1.9rem);
+  }
+}
+
+/* I had a lil issue when I added the active nav indicator. So I made the nav_list a link and removed the padding-block from the nav_menu, then added it to the nav_list */
+.nav_menu .nav_list {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  text-shadow: 1px -1px 1px rgba(0, 0, 0, 0.13), -1px -1px 2px rgba(124, 55, 91, 0);
+  padding-block: 2rem;
+  transition: var(--transition);
+}
+
+
+.nav_menu .nav_list:is(:link, :active, :visited).nav_link_active {
+  border-bottom: 4px solid var(--light-yellow);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+
+.nav_list p {
+  color: #fff;
+}
+
+
+/* This selects the icons */
+
+.nav_list [aria-hidden="true"] {
+  font-weight: 700;
+  font-size: 1.35 rem;
+  margin-inline-end: .8em;
+  color: var(--light-yellow);
+}
+
+
+.mobile_nav_toggle {
+  display: none;
+}
+
+
+@media only screen and (width < 768px) {
+  .nav_container .nav_menu {
+    position: fixed;
+    /* inset is a shortcut for top buttom left and right. The 30% pushes it off the left side */
+    inset: 0 0 0 30%;
+    z-index: 1000;
+    flex-direction: column;
+    gap: 0;
+    padding: 3.5rem 0 15rem 2em;
+    transition: transform 0.3s ease-out;
+    transform: translateX(100%);
+    border-radius: 0;
+  }
+
+
+  .nav_container .nav_menu[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .nav_list [aria-hidden="true"] {
+    font-size: 1.45rem;
+    margin-inline-end: .48em;
+  }
+
+  .mobile_nav_toggle {
+    position: absolute;
+    width: 2rem;
+    /* aspect ratio: 1 means that the width and the heights are the same. Therefore if you change the width anytime, it'd automatically change the height to the same value simultaneously */
+    aspect-ratio: 1;
+    top: 2.65rem;
+    right: 2.85rem;
+    background-color: transparent;
+    background-image: url("/image/icon-hamburger.svg");
+    background-repeat: no-repeat;
+    border: 0;
+    z-index: 9999;
+    display: block;
+  }
+
+  .mobile_nav_toggle[aria-expanded="true"] {
+    background-image: url("/image/icon-close.svg");
+  }
+}
+
+@media only screen and (width >=768px) {
+  .nav_container .nav_menu {
+    /* padding-block: 2rem; */
+    padding-inline: clamp(1.9rem, 7vh, 13rem);
+  }
+}
+
+@media only screen and (width <= 320px) {
+  .nav_container .nav_menu {
+    padding-top: 12rem;
+  }
+  .mobile_nav_toggle {
+    right: 1.5rem;
+  }
+}
+
+/* 
+===============
+Header Details
+===============
+*/
+
+/* 
+===============
+Header Details
+===============
+*/
+
+
+.header_details {
+  font-family: var(--Mija), var(--rubik-font), sans-serif, 'Open Sans';
+  color: var(--light-ash);
+  text-shadow: var(--text-shadow);
+}
+
+
+.header_details_container_flex {
+  width: 90%;
+  margin-inline: auto;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.hearder_h1 {
+  text-transform: capitalize;
+  font-size: 2.5em;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+
+.hearder_h1_b1, .hearder_h1_b2 {
+  letter-spacing: 0.2rem;
+}
+
+.hearder_h1_b1 {
+  display: block;
+  font-weight: 800;
+}
+
+.hearder_h1_b2 {
+  display: block;
+}
+
+.header_details_list_container {
+  text-align: left;
+}
+
+
+.list_point {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: min(0.2rem, 2vh, 0.58rem);
+}
+
+.list_point_img_container {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--font-gray-color);
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+
+.list_point_img {
+  width: 75%;
+  display: block;
+  object-fit: cover;
+  height: fit-content;
+}
+
+.list_details h5 {
+  font-size: min(1.49em, 9.5vw, 10em);
+  line-height: 1.35;
+  margin: 9px;
+  font-weight: 600;
+}
+
+/* 
+===============
+Header Ripple Botton 
+===============
+*/
+
+.enrol_ripple_btn {
+  padding: 1.01rem 1.2rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.13rem;
+  font-family: var(--Mija), sans-serif, 'Open Sans';
+  border-radius: 50px;
+}
+
+/* 
+===============
+Header Media Queries 
+===============
+*/
+
+@media only screen and (width >= 1280px) {
+  .header_details_container_flex {
+    margin-top: clamp(2em, 3vw, 10em);
+  }
+} 
+
+
+@media only screen and (width < 1024px) {
+  .header_details_container_flex {
+    margin-top: 8rem;
+  }
+} 
+
+
+@media only screen and (width < 1024px) {
+  .header_details_container_flex {
+    margin-top: 8rem;
+  }
+}
+
+
+@media only screen and (width < 992px) {
+  .header_details_container_flex {
+    padding-inline: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5em;
+  }
+
+  .list_point_img_container {
+    width: 25px;
+    height: 25px;
+  }
+
+  .list_point {
+    padding-left: 15px;
+  }
+
+  .list_point_img_container {
+    border-radius: 5px;
+  }
+
+  .list_details h5 {
+    margin: 12px;
+  }
+
+  .header_details {
+    margin-top: 0;
+  }
+}
+
+
+@media only screen and (width <= 600px) {
+  .header_details_container_flex {
+    margin-top: clamp(0.5rem, 2vh, 2rem);
+  }
+
+  .enrol_ripple_btn {
+    padding: 0.8rem 1rem;
+    font-size: 1.19rem;
+  }
+}
+
+@media only screen and (width < 360px) {
+  .enrol_ripple_btn {
+    padding: 0.5rem 0.6rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.02;
+  }
+
+  .hearder_h1 h1 {
+    margin: 0;
+  }
+
+}
+
+@media only screen and (width <= 320px) {
+  .header_details_container_flex {
+    margin-top: 0;
+  }
+
+  .hearder_h1 {
+    font-size: 1.2rem;
+  }
+
+  .list_details h5 {
+    font-size: 1rem;
+  }
+
+  .list_details h5 {
+    margin: 10px;
+  }
+
+  .enrol_ripple_btn {
+    font-size: 0.9rem;
+    letter-spacing: 0.01;
+  }
+}
+
+
+/* 
+==============
+Header Section for SM analytics and search widget
+============== 
+*/
+
+.header_section {
+  background-color: rgba(224, 224, 224, 0.5);
+  margin-bottom: 15px;
+  margin-top: 0.059px;
+  border-radius: 0 0 10px 10px;
+  box-shadow: var(--blue-box-shadow), rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  border: 1.2px solid var(--light-ash);
+  /* border-top: none; */
+}
+
+.header_section_container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+}
+
+
+@media only screen and (width < 768px) {
+  .header_section_container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+
+/* 
+==============
+Social media analytics
+============== 
+*/
+
+
+
+.social_media_stats {
+  height: fit-content;
+}
+
+.social_media_stats .social_media_content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 328px;
+  height: fit-content;
+  background-color: var(--light-ash-SMapp);
+  color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  /* border: 0.0001px solid var(--green-gray-bg); */
+}
+
+.social_media_content .social_media_p {
+  text-align: left;
+  color: var(--font-solid-black);
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  color: var(--nice-font-colour2);
+}
+
+
+.social_media_content .icon_container {
+  display: flex;
+  background: #5780e9;
+  border-radius: 8px;
+  justify-content: space-evenly;
+  padding: 3px 1px 3px 2.5px;
+}
+
+
+.social_media_content .icon_container .icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 24px;
+  padding-left: 5px;
+}
+
+
+.social_media_content .icon_container .icon_content {
+  padding: 8px 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #81a0ef;
+  gap: 1px;
+}
+
+
+.icons:last-of-type .icon_content {
+  border-right: none;
+}
+
+.icons .icon_content .stats {
+  font-weight: 450;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.icons .icon_content .social_media_small {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+
+/*
+==============
+Search widget
+==============
+*/
+
+
+.search-container {
+  position: relative;
+  height: 50px;
+}
+
+.search-container .input {
+  background-color: #fff;
+  font-size: 1.1rem;
+  padding: 1rem;
+  border: 0;
+  height: 50px;
+  width: 50px;
+  transition: width .3s ease;
+}
+
+.search-container .btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  border: 0;
+  font-size: 1.1rem;
+  transition: transform .3s ease;
+  cursor: pointer;
+}
+
+.search-container .btn:focus-visible,
+.search-container .input:focus-visible {
+  outline: none;
+}
+
+
+.search-container.active .input {
+  width: 200px;
+  border-radius: 4px 0 0 4px;
+}
+
+.search-container.active .btn {
+  transform: translateX(198px);
+  border-radius: 0 4px 4px 0;
+}
+
+
+/* 
+===============
+Main Tab
+===============
+*/
+/* 
+===============
+Main Tab
+===============
+*/
+
+.tab {
+  width: 100%;
+}
+
+.tab_ul {
+  display: flex;
+}
+
+.tab_ul > * {
+  padding: 0 1rem;
+}
+
+.tab_ul a {
+  color: var(--color-black1);
+  font-weight: 600;
+  font-size: 1.12em;
+}
+
+@media screen and (width <=600px) {
+  .tab_ul {
+    justify-content: space-around;
+  }
+}
+
+/* Underline when hover starts here*/
+
+.tab_ul li {
+  position: relative;
+  display: block;
+}
+
+.tab_ul li::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 4px;
+  top: 155%;
+  left: 0;
+  transition: transform .5s;
+  transform: scaleX(0);
+  transform-origin: right;
+  background-color: var(--color-black1);
+  border-start-start-radius: 50px;
+  border-start-end-radius: 50px;
+}
+
+.tab_ul li:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media screen and (width <= 1024px) {
+  .tab_ul li::after {
+    top: 147%;
+  }
+}
+
+/* Underline when hover ends here*/
+
+
+/* 
+===============
+Popular Courses Section
+===============
+*/
+
+/* 
+===============
+Porpular Courses Section
+===============
+*/
+
+.popular_courses {
+  margin-bottom: 2rem;
+}
+
+.popular_courses_container p {
+  margin: 2rem 0;
+}
+
+
+.popular_courses .article_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.popular_courses .article_container>* {
+  color: var(--color-white);
+  background-color: var(--color-bg);
+  transition: var(--transition);
+}
+
+
+.popular_courses .article_container>*:hover {
+  color: var(--color-black1);
+  background-color: transparent;
+  border: 1px solid var(--color-black1);
+}
+
+.popular_course_details {
+  padding: 1rem;
+}
+
+.popular_course_details h3 {
+  margin: 1rem 0;
+}
+
+.popular_course_details p {
+  margin: 2rem 0;
+  font-size: 1rem;
+}
+
+@media screen and (width < 1024px) {
+  .container {
+    width: var(--container-width-md);
+  }
+
+  .popular_courses .article_container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.3rem;
+  }
+
+  .btn-primary {
+    margin-bottom: 1.3em;
+  }
+}
+
+@media screen and (width < 600px) {
+  .container {
+    width: var(--container-width-sm);
+    padding-inline: 0;
+  }
+
+  .popular_courses .article_container {
+    grid-template-columns: 1fr;
+  }
+
+  .popular_courses .article_container > * {
+    max-width: 20rem;
+    margin-inline: auto;
+  }
+
+  .popular_course_details h3 {
+    margin-bottom: 0;
+    font-size: 1.1em;
+  }
+
+  .popular_course_details p {
+    font-size: 0.89em;
+  }
+
+}
+
+
+/* 
+===============
+Categories Section
+===============
+*/
+
+/* 
+===============
+Categories Section
+===============
+*/
+.container {
+  width: var(--container-width-lg);
+  /* margin: 0 auto; */
+}
+
+
+.categories {
+  border-radius: 0 0 1.5rem 1.5rem;
+  background: var(--color-bg2);
+  height: 24em;
+  text-align: left;
+  padding-top: 4rem;
+  margin-bottom: 3.2em;
+  scroll-margin-top: 8px;
+}
+
+.categories h1 {
+  line-height: 1rem;
+  margin-bottom: 3rem;
+}
+
+.categories__container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 4rem;
+}
+
+.categories__left {
+  margin-right: 1rem;
+}
+
+.categories__left p {
+  margin: 1rem 0 3rem;
+}
+
+.categories__right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.category {
+  background: var(--color-bg-primary);
+  padding: 2rem;
+  border-radius: 2rem;
+  transition: var(--transition);
+}
+
+.category:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 1;
+}
+
+.category:nth-child(2) .category__icon {
+  background-color: var(--color-warning);
+}
+
+.category:nth-child(3) .category__icon {
+  background-color: var(--color-danger);
+}
+
+.category:nth-child(4) .category__icon {
+  background-color: sandybrown;
+}
+
+.category:nth-child(5) .category__icon {
+  background-color: var(--color-danger);
+}
+
+.category:nth-child(6) .category__icon {
+  background-color: chartreuse;
+}
+
+.category__icon {
+  background-color: chartreuse;
+  padding: 0.7rem;
+  border-radius: 0.9rem;
+}
+
+.category h5 {
+  margin: 2rem 0 1rem;
+}
+
+.category p {
+  font-size: 0.85rem;
+}
+
+
+@media screen and (width <= 1024px) {
+  .container {
+    width: var(--container-width-md);
+  }
+
+  .categories {
+    height: fit-content;
+    padding: 2rem 0;
+    margin-bottom: 0;
+  }
+
+  .categories h1 {
+    margin-bottom: 2.2rem;
+  }
+
+  .categories__container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .categories__left {
+    margin-right: 0;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .categories__left p {
+    margin: 0 0 2rem;
+    text-align: center;
+  }
+
+  .categories__right {
+    gap: 1.1rem;
+  }
+}
+
+
+@media screen and (width < 600px) {
+  .container {
+    width: var(--container-width-sm);
+  }
+
+  .categories {
+    height: fit-content;
+    text-align: left;
+    padding: 2rem 0.5rem;
+    margin-bottom: 0;
+  }
+
+
+  .categories__right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+
+  .category {
+    padding: 1.6rem 1.45rem 1.45rem;
+  }
+
+  .category h5 {
+    margin: 1.8em 0 0.7em;
+  }
+
+  .category p {
+    font-size: 0.7em;
+    line-height: clamp(0.8rem, 3vw,1rem);
+  }
+
+  .category__icon {
+    padding: 0.5rem;
+    border-radius: 0.6rem;
+  }
+
+  /* .categories__container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  } */
+
+  /* .categories__left {
+    margin-right: 0;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } */
+
+  /* .categories__left p {
+    margin: 0 0 2rem;
+    text-align: center;
+  } */
+/* 
+  .categories__right {
+    gap: 1.1rem;
+  } */
+}
+
+/* 
+===============
+Staff Section
+===============
+*/
+
+/* 
+===============
+Staff Section
+===============
+*/
+
+.admin {
+  width: 100%;
+  margin-top: 5rem;
+  scroll-margin-top: 1.5rem;
+}
+
+@media screen and (width < 1024px) {
+  .admin {
+    margin-top: 0px;
+  }
+}
+
+
+
+.admin .h1_underline {
+  margin-bottom: 3.2em;
+}
+
+.admin .underline {
+  height: 0.25rem;
+  width: 6em;
+  background: var(--yellow-background);
+  margin-inline: auto;
+  border-radius: 20px;
+}
+.admin .h1_underline h1 {
+  margin-bottom: 0.6em;
+}
+
+
+
+.staff_section {
+  margin-inline: auto;
+  width: 100%; 
+}
+
+.staff_container {
+  margin-inline: auto;
+  max-width: 100%;
+  transform: translateX(800%);
+  transition: transform .3s ease;
+}
+
+.staff_container:nth-of-type(even) {
+  transform: translateX(-800%);
+}
+
+.staff_container.show {
+  transform: translateX(0);
+}
+
+
+.staff_container .picture { 
+  background: no-repeat center top/cover;
+  max-width: 100%;
+  width: 350px;
+  height: 250px;
+  border-radius: 20px;
+  margin-inline: auto;
+  background-position-y: -30px;
+  }
+
+  .staff_1 .picture {
+    background-image: url("/Image/pexels-cottonbro_1080x1620.jpg");
+  }
+  .staff_2 .picture {
+    background-image: url("/Image/Teacher1.jpg");
+  }
+  .staff_3 .picture {
+    background-image: url("/Image/Soibi_1080x1620.jpg");
+  }
+  .staff_4 .picture {
+    background-image: url("/Image/Lady_colours_1080x1620.jpg");
+  }
+  .staff_5 .picture {
+    background-image: url("/Image/Lady_korea_1080x1623.jpg");
+  }
+
+
+.staff_container .details {
+  margin-inline: auto;
+  padding: 5px;
+  border-radius: 20px;
+  width: 285px;
+  /* This max height helps the container to adjust the height when more lorems are add till it gets to a height of 150px */
+  max-height: 150px;
+  overflow: hidden;
+  font-size: 0.8rem;
+  text-align: left;
+  padding: 15px 50px 13px 40px;
+  background-color: rgb(231, 222, 214);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  transform: translateY(-50px);
+  position: relative;
+}
+
+
+.staff_container .details::before {
+  content: "";
+  position: absolute;
+  background: var(--yellow-background);
+  inset: 0;
+  right: 265px;
+  
+}
+
+.staff_container .details p {
+  margin: 5px 0;
+  max-width: 100%;
+}
+
+.staff_container .details .fa-chevron-right {
+  position: absolute;
+  top: 45%;
+  right: 25px;
+}
+
+
+@media only screen and (width < 576px) {
+  .admin .h1_underline {
+    margin-bottom: 2.5em;
+  }
+
+	.staff_container .picture { 
+    background: url("/Image/Teacher2.jpg") no-repeat center top/cover;
+    width: 260px;
+    height: 180px;
+    background-position-y: -5px;
+    }
+  
+  .staff_1 .picture {
+    background-image: url("/Image/pexels-cottonbro_400x300.jpg");
+  }
+
+  .staff_2 .picture {
+    background-image: url("/Image/Teacher2.jpg");
+  }
+
+  .staff_3 .picture {
+    background-image: url("/Image/Soibi_400x300.jpg");
+  }
+
+  .staff_4 .picture {
+    background-image: url("/Image/Lady_colours_400x300.jpg");
+  }
+
+  .staff_5 .picture {
+    background-image: url("/Image/Lady_korea_400x300.jpg");
+  }
+  
+  .staff_container .details {
+    width: 200px;
+    /* This max height helps the container to adjust the height when more lorems are add till it gets to a height of 150px */
+    height: 100px;
+    padding: 10px 36px 13px 37px;
+    font-size: 0.55rem;
+    transform: translateY(-50px);
+    position: relative;
+  }
+
+  .staff_container .details::before {
+    right: 183px;
+    
+  }
+  
+  .staff_container .details p {
+    margin: 5px 0;
+    max-width: 100%;
+  }
+
+  .staff_container .details .fa-chevron-right {
+    right: 20px;
+  }
+
+}
+
+
+/* 
+==============
+Staff Grid
+============== 
+*/
+/* 
+==============
+Staff Grid
+============== 
+*/
+
+.staff_section.staff_grid {
+  display: grid;
+  place-content: center;
+  gap: 1.5rem;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
+
+    /* The width helps to space the columns. You can use differnt values for the percentage to see how it works */
+    /* width: min(100%, 90rem); */
+
+    /*  This works when we didn't set the width of the admin section to 100%. It will just take the width of its content since its width wasn't specified. To then space out the column and row, we use column gap and column row respectively. 
+    column-gap: 7em; */
+    row-gap: 1em;
+    margin-inline: auto;
+}
+
+.staff_container:nth-child(1) {
+  grid-area: one;
+}
+.staff_container:nth-child(2) {
+  grid-area: two;
+}
+.staff_container:nth-child(3) {
+  grid-area: three;
+}
+.staff_container:nth-child(4) {
+  grid-area: four;
+}
+.staff_container:nth-child(5) {
+  grid-area: five;
+}
+
+/* Use 949 if the width is still giving issues */
+@media only screen and (width > 958px) {
+  .staff_section.staff_grid {
+    grid-template-areas: 
+    "one two"
+    "three four"
+    "five five";
+  }
+}
+
+
+
+/* 
+==============
+FAQs
+============== 
+*/
+/* 
+==============
+FAQs
+============== 
+*/
+
+
+.faq_section {
+  width: 100%;
+  scroll-margin-top: 2rem;
+}
+
+.faq_section .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.faq-container {
+  text-align: left;
+  width: 100%;
+  max-width: 800px;
+  margin: 1rem 1rem 0;
+  padding: 1.6rem 1.7rem;
+}
+
+.faq {
+  position: relative;
+  border: 1px solid var(--heavy-ash);
+  margin: 0 0 1.3rem;
+  border-radius: 5px;
+  padding: 1em;
+  background-color: transparent;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  transition: .7s ease;
+}
+
+.faq-question {
+  width: 87%;
+  margin-bottom: 0.5rem;
+}
+
+.faq-answer {
+  width: 93%;
+  display: none;
+}
+
+.faq.active .faq-answer {
+  display: block;
+}
+
+/* The message icon from font awesome that shows when the active class is toggled was flowing out of the faq container, so I did overflow hidden and the icon adjusted into the container */
+
+.faq.active {
+  background-color: white;
+  overflow: hidden;
+}
+
+.faq.active::after,
+.faq.active::before {
+  content: "\f27a";
+  font-family: var(--font-awesome);
+  font-size: 7.5em;
+  opacity: 0.17;
+  position: absolute;
+  z-index: 0;
+
+}
+
+.faq.active::after {
+  color: aquamarine;
+  top: 15px;
+}
+
+.faq.active::before {
+  color: cadetblue;
+  top: -60px;
+  left: 1px;
+  transform: rotate(50deg);
+}
+
+/* Let's animate the humbergor icon */
+.faq-toggle {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 1.4em;
+  right: 1.4rem;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+
+.faq-toggle:focus-visible {
+  outline: 0;
+}
+
+
+@media only screen and (width < 576px) {
+  .faq_section .container {
+    padding: 0;
+  }
+
+  .faq-toggle {
+    right: clamp(0.6em, 2vw, 0.9em);
+    top: 1.4rem;
+  }
+
+  .faq.active .faq-toggle {
+    width: 25px;
+    height: 25px;
+  }
+
+  .faq h3 {
+    font-size: clamp(0.89rem, 3.5vw, 1.2rem);
+  }
+
+  .faq p {
+    font-size: 0.84rem;
+  }
+
+}
+
+@media only screen and (width > 640px) {
+  .faq-toggle {
+    right: 1.1em
+  }
+
+}
+
+@media only screen and (width > 768px) {
+  .faq-toggle {
+    right: 1.4em
+  }
+
+  .faq.active .faq-toggle {
+    width: 30px;
+    height: 30px;
+  }
+
+}
+
+@media only screen and (width > 1024px) {
+  .faq-toggle {
+    right: 1.6em
+  }
+
+  .faq.active .faq-toggle {
+    width: 32px;
+    height: 32px;
+  }
+
+}
+
+
+/* 
+==============
+Reviews Section
+============== 
+*/
+/* 
+==============
+Reviews Section
+============== 
+*/
+
+.reviews {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+.reviews .container {
+  max-width: 900px;
+  padding-inline: 0;
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+
+.reviews_content {
+  position: relative;
+  max-width: 800px;
+  text-align: center;
+  margin-inline: auto;
+  height: 45vh;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+
+.reviews_list {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 13rem;
+}
+
+
+.swiper-wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.reviews_list li {
+  /* list-style-type: none; */
+  width: 220px;
+  height: 220px;
+  opacity: .25;
+  position: absolute;
+  left: 50%;
+  margin-left: -318px;
+  border-radius: 10px;
+  background: #9C89B8;
+  transition: transform 1s, opacity 1s;
+  overflow: hidden;
+  z-index: -4;
+}
+
+
+.reviews_list .act {
+  opacity: 1;
+}
+
+.reviews_list .prev,
+.reviews_list .next {
+  cursor: pointer;
+}
+
+.reviews_list .prev {
+  transform: translateX(-240px) scale(.85);
+}
+
+.reviews_list .next {
+  transform: translateX(240px) scale(.85);
+}
+
+
+@media screen and (width < 1024px) {
+  .reviews_content {
+    height: 26vh;
+  }
+}
+@media screen and (width < 800px) {
+  .reviews_content {
+    height: 29.5vh;
+  }
+}
+@media screen and (width < 600px) {
+  .reviews_content {
+    height: 35vh;
+  }
+
+  .reviews_list .prev,
+  .reviews_list .next {
+    display: none;
+  }
+}
+
+@media screen and (width < 360px) {
+  .reviews_content {
+    height: 55vh;
+  }
+}
+
+
+/* Reviewers contents starts here */
+
+
+.reviewer_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: -2;
+}
+
+
+.reviewer_container::before {
+  position: absolute;
+  content: "";
+  inset: 15px;
+  border-radius: 15px;
+  background-color: #faf9f4;
+  z-index: -1;
+}
+
+.reviewer_container::after {
+  position: absolute;
+  content: "";
+  inset: 101px;
+  background-color: #faf9f4;
+  z-index: -1;
+  display: block;
+  transform: translateY(95px) rotate(45deg);
+}
+
+.reviewer_details {
+  width: 80%;
+  margin-inline: auto;
+}
+
+.reviewer_name h5 {
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+
+.reviewer_name p {
+  font-size: 0.01rem;
+}
+
+.rating span {
+  font-size: 0.8rem;
+  display: none;
+}
+
+
+.reviewer_picture {
+  position: relative;
+  margin-inline: auto;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 5.6px solid #9C89B8;
+}
+
+.reviewer_picture img{
+  position: absolute;
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.reviewer_position small {
+  opacity: .6;
+  font-size: 0.8rem;
+}
+
+.reviewer_message p {
+  margin-top: 0.6rem;
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+}
+
+
+
+/* 
+==============
+Footer Section
+============== 
+*/
+/* 
+==============
+Footer Section
+============== 
+*/
+
+footer {
+  background-color: rgba(224, 224, 224, 0.5);
+  border-radius: 10px 10px 0 0;
+  box-shadow: var(--blue-box-shadow), rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  border: 1.2px solid var(--light-ash);
+}
+
+/* Make sure to put this on the custom css, ul and h5 */
+
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+footer a  {
+  transition: var(--transition);
+}
+
+footer a:any-link {
+  color: inherit;
+}
+
+footer a:hover {
+  color: var(--green-gray-bg);
+}
+
+.footer_content h3 {
+  margin-bottom: 0.8rem;
+}
+
+.footer_content li {
+  margin-bottom: 0.09rem;
+  font-size: 1rem;
+}
+
+.footer_container_up {
+  display: grid;
+  grid-template-columns: 10% 90%;
+  width: 98%;
+  padding-bottom: 2rem;
+}
+
+.footer_up, 
+.footer_down {
+  width: 100%;
+  height: fit-content;
+  padding: 6rem 2rem 2rem;
+}
+
+.footer_up {
+  display: none;
+}
+
+.footer_container_up .logo_container {
+  position: relative;
+  margin-inline: auto;
+  width: 47px;
+  height:47px;
+  border-radius: 50%;
+}
+
+.footer_container_up .logo_container img {
+  position: absolute;
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.footer_content { 
+  display: grid;
+  grid-gap: 2.4rem;
+  grid-auto-flow: column;
+  width: 100%;
+  grid-template-columns: repeat(4, 140px);
+  justify-content: end;
+}
+
+.fourth_content {
+  margin-top: 0.54rem;
+}
+
+/* Gets its properties from ripple button custom properties */
+.sign_up_btn {
+  background-color: var(--color-white);
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+  color: var(--color-black);
+  transition: var(--transition);
+  margin-top: 0.8rem;
+}
+
+.sign_up_btn:focus-visible {
+  outline: none;
+}
+
+.sign_up_btn:hover {
+  color: var(--color-black1);
+  border-color: var(--color-black);
+  box-shadow: none;
+}
+
+.sign_up_btn:active {
+  scale: 1;
+}
+
+
+/* footer down starts here */
+.footer_down_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 1rem;
+}
+
+.footer_down_right,
+.footer_socials {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+
+.footer_socials .socials_container {
+  position: relative;
+  margin-inline: auto;
+  width: 20px;
+  height: 20px;
+}
+
+.footer_toggle {
+  position: absolute;
+  right: 50px;
+  transform: translateY(-70px);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.footer_toggle .uil-bars { 
+  border: 2px solid var(--green-gray-bg);
+  padding: 0.01rem 0.25rem;
+  border-radius: 4px;
+}
+
+
+.footer_toggle .uil-bars:active { 
+  scale: 0.97;
+}
+
+@media screen  and (width < 883px) {
+  .footer_container_up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 3rem;
+  }
+
+  .footer_content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+
+@media screen and (width < 600px) {
+  .footer_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+
+  .footer_down_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    gap: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+}
+
+@media screen and (width <= 320px) {
+  .footer_down_left p {
+    text-align: center;
+  }
+
+  .footer_toggle {
+    right: 25px;
+  }
+}

@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Multipurpose Website</title>
+
+  <!-- ICONSOUT cdn -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/courses.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/post.css">
+  <link rel="stylesheet" href="css/message.css">
+  <link rel="stylesheet" href="css/404.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  
+  <script src="JS/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header_container">
+      <div class="header_slide_container">
+        <nav class="nav_container">
+          <figure class="logo_container">
+            <img class="logo" src="/image/logo_200x200.png" alt="School logo" width="200" height="200">
+          </figure>
+  
+          <!-- aria-controls shows that this button controls the nav_menu. sr-only hides things visually but not the screen readers i.e it's visually invisible but screen readers can read it-->
+          <button aria-controls="nav_menu" aria-expanded="false" class="mobile_nav_toggle">
+            <span class="sr-only">Menu</span>
+          </button>
+
+          <div data-visible="false" id="nav_menu" class="nav_menu">
+            <a class="nav_list" href="/index.html">
+              <i class="fa-solid fa-house" aria-hidden="true"></i>
+              <p>Home</p>
+            </a>
+            <a class="nav_list" href="/courses.html">
+              <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+              <p>Courses</p>
+            </a>
+            <a class="nav_list" href="/contact.html">
+              <i class="fa-solid fa-address-book" aria-hidden="true"></i>
+              <p>Contact</p>~
+            </a>
+            <a class="nav_list" href="/about.html">
+              <i class="fa-solid fa-tablet" aria-hidden="true"></i>
+              <p>About</p>
+            </a>
+          </div>
+        </nav>
+  
+        <!-- Header Details -->
+  
+        <div class="header_details">
+          <div class="header_details_container_flex"> 
+            <div class="header_detail_container">
+              <h1 class="hearder_h1">
+                <span class="hearder_h1_b1">School</span>
+                <span class="hearder_h1_b2"> admission</span>
+                open for <span class="current_year"></span>
+              </h1>
+              
+              <div class="header_details_list_container">
+                <div class="header_details_list list1">
+                  <div class="list_point">
+                    <figure class="list_point_img_container">
+                      <img class="list_point_img" src="image/bullet3_200x200.png" alt="bullet image" width="200" height="200">
+                    </figure>
+                    <div class="list_details">
+                      <h5> Our school has a green play ground</h5>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="header_details_list list2">
+                  <div class="list_point">
+                    <figure class="list_point_img_container">
+                      <img class="list_point_img" src="image/bullet2_338x338.jpg" alt="bullet image" width="338" height="338">
+                    </figure>
+                    <div class="list_details">
+                      <h5> Our school has the best education plan</h5>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="header_details_list list 3">
+                  <div class="list_point">
+                    <figure class="list_point_img_container">
+                      <img class="list_point_img" src="image/bullet1_200x200.png" alt="bullet image" width="200" height="200">
+                    </figure>
+                    <div class="list_details">
+                      <h5> Our school has world class faculty</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+            <div>
+              <button class="ripple_button enrol_ripple_btn"> 
+                <p>Enrol Now!</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="header_section">
+    <div class="header_section_container">
+
+      <div class="social_media_analytics">
+        <div class="social_media_stats">
+          <div class="social_media_content">
+            <p class="social_media_p"> Social Media Analytics</p>
+            <div class="icon_container">
+              <!-- Each social media container -->
+        
+              <div class="icons twitter">
+                <i class="fab fa-twitter"></i>
+                <div class="icon_content">
+                  <div class="stats" data-target="9160"></div>
+                  <small class="social_media_small">Followers</small>
+                </div>
+              </div>
+        
+              <div class="icons facebook">
+                <i class="fab fa-facebook"></i>
+                <div class="icon_content">
+                  <div class="stats" data-target="3902"></div>
+                  <small class="social_media_small">Fans</small>
+                </div>
+              </div>
+        
+              <div class="icons linkedIn">
+                <i class="fab fa-linkedin"></i>
+                <div class="icon_content">
+                  <div class="stats" data-target="6570"></div>
+                  <small class="social_media_small">Connections</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header_search_widget">
+        <div class="search-container">
+          <input type="text" class="input" placeholder="Search...">
+          <button class="btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <main> 
+
+    <div class="tab">
+      <ul class="tab_ul">
+        <li>
+          <a href="#categories" class="tab_1">Categories</a>
+        </li>
+        <li>
+          <a href="#faq_section" class="tab_1">FAQs</a>
+        </li>
+        <li>
+          <a href="#staff" class="tab_1">Staff</a>
+        </li>
+      </ul>
+      <hr>
+    </div>
+
+    <!-- POPULAR COURSES SECTION -->
+
+    <section class="popular_courses">
+      <div class="container popular_courses_container general_underline hide_scroll_animation scale_from_top">
+        <div class="h1_underline">
+          <h1>Our Popular Courses</h1>
+        </div>
+        <div class="underline"></div>
+        <p class="main_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe aut eos tenetur, ipsum quos ipsa praesentium delenitisuscipit dolor quibusdam totam repellat pariatur fugit voluptate dolorem accusantium iure veritatis fugiat!</p>
+        <div class="article_container">
+          <article>
+            <figure>
+              <img src="/image/course1.jpg" alt="course image">
+              <figcaption class="sr-only">Courses</figcaption>
+            </figure>
+            <div class="popular_course_details">
+              <h3>Internet Application Development </h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, totam. Quisquam nulla voluptatem tempora eum recusandae. Fugiat dolorum amet quasi consectetur ipsa, sed minus natus distinctio, ex.
+              </p>
+              <a href="#" class="btn_origin btn-primary">Learn More</a>
+            </div>
+          </article>
+
+          <article>
+            <figure>
+              <img src="/image/course2.jpg" alt="course image">
+              <figcaption class="sr-only">Courses</figcaption>
+            </figure>
+            <div class="popular_course_details">
+              <h3>Responsive Website Design </h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, totam. Quisquam nulla voluptatem tempora eum recusandae. Fugiat dolorum amet quasi consectetur ipsa, sed minus natus distinctio, ex.
+              </p>
+              <a href="#" class="btn_origin btn-primary">Learn More</a>
+            </div>
+          </article>
+
+          <article>
+            <figure>
+              <img src="/image/course3.jpg" alt="course image">
+              <figcaption class="sr-only">Courses</figcaption>
+            </figure>
+            <div class="popular_course_details">
+              <h3>Data Management and Analytics </h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, totam. Quisquam nulla voluptatem tempora eum recusandae. Fugiat dolorum amet quasi consectetur ipsa, sed minus natus distinctio, ex.
+              </p>
+              <a href="#" class="btn_origin btn-primary">Learn More</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES SECTION -->
+
+    <section class="categories hide_scroll_animation from_left" id="categories">
+      <div class="container categories__container">
+    
+        <div class="categories__left">
+          <h1>Categories</h1>
+          <p class="main_p">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis non cupiditate recusandae. Corporis placeat
+            necessitatibus molestias, beatae impedit recusandae debitis doloremque ab dolorem? Quod, tempore quis pariatur
+            sunt sequi mollitia.
+          </p>
+          <a href="#" class="btn_origin">Learn More</a>
+        </div>
+    
+    
+        <div class="categories__right">
+          <article class="category">
+            <span class="category__icon"><i class="uil uil-bitcoin-circle"></i></span>
+            <h5>Blockchain</h5>
+            <p>Lorem ipsum dolor sit amet consectur adipisicing elit. Ad, quis.</p>
+          </article>
+    
+          <article class="category">
+            <span class="category__icon"><i class="uil uil-palette"></i></span>
+            <h5>Graphics Design</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, quis.</p>
+          </article>
+    
+          <article class="category">
+            <span class="category__icon"><i class="uil uil-usd-circle"></i></span>
+            <h5>Finance</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, quis.</p>
+          </article>
+    
+          <article class="category">
+            <span class="category__icon"><i class="uil uil-megaphone"></i></span>
+            <h5>Marketing</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, quis.</p>
+          </article>
+    
+          <article class="category">
+            <span class="category__icon"><i class="uil uil-music"></i></span>
+            <h5>Music</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, quis.</p>
+          </article>
+    
+          <article class="category">
+            <span class="category__icon"><i class="uil uil-puzzle-piece"></i></span>
+            <h5>Business</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, quis.</p>
+          </article>
+        </div>
+    
+      </div>
+    </section>
+
+    <!-- ADMIN SECTION -->
+
+    <section class="admin" id="staff">
+      <div class="h1_underline">
+        <h1>Administrative Staff</h1>
+        <div class="underline"></div>
+      </div>
+      <div class="staff_section section staff_grid">
+        <div class="staff_container staff_1">
+          <div class="picture">
+            <p class="offscreen">sbhhbw</p>
+          </div>
+          <div class="details">
+            <div class="details_info">
+              <h3>Undergraduate Study</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet. Lorem ipsum dolor sit. Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
+
+        <div class="staff_container staff_2">
+          <div class="picture">
+            <p class="offscreen">sbhhbw</p>
+          </div>
+          <div class="details">
+            <div class="details_info">
+              <h3>Undergraduate Study</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet. Lorem ipsum dolor sit. Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
+
+        <div class="staff_container staff_3">
+          <div class="picture">
+            <p class="offscreen">sbhhbw</p>
+          </div>
+          <div class="details">
+            <div class="details_info">
+              <h3>Postgraduate Study</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet. Lorem ipsum dolor sit. Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
+
+        <div class="staff_container staff_4">
+          <div class="picture">
+            <p class="offscreen">sbhhbw</p>
+          </div>
+          <div class="details">
+            <div class="details_info">
+              <h3>Postgraduate Study</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet. Lorem ipsum dolor sit. Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
+
+        <div class="staff_container staff_5">
+          <div class="picture">
+            <p class="offscreen">sbhhbw</p>
+          </div>
+          <div class="details">
+            <div class="details_info">
+              <h3>Postgraduate Study</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet. Lorem ipsum dolor sit. Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
+
+      </div>
+  </section>
+
+  <!-- FAQs SECTION -->
+
+  <section class="faq_section" id="faq_section">
+    <div class="container general_underline hide_scroll_animation from_top">
+      <div class="h1_underline">
+        <h1>Frequently asked Questions</h1>
+      </div>
+      <div class="underline"></div>
+
+      <div class="faq-container">
+        <div class="faq">
+          <h3 class="faq-question">
+            Why shouldn't we trust atoms?
+          </h3>
+      
+          <p class="faq-answer">
+            They make up everything
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium omnis harum facilis consequuntur laboriosam
+            ipsam iste velit, vero libero distinctio, tenetur est nulla labore quod blanditiis aperiam, placeat aspernatur
+            alias?
+          </p>
+      
+          <button class="faq-toggle">
+            <i class="uil uil-plus"></i>
+          </button>
+        </div>
+      
+        <div class="faq">
+          <h3 class="faq-question">
+            Will I continue to have access to the course materials after completing the program?
+          </h3>
+          <p class="faq-answer">
+            Nobody knows. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum dolores repudiandae, maiores est
+            facilis sit fugit quis, aperiam.
+          </p>
+          <button class="faq-toggle">
+            <i class="uil uil-plus"></i>
+          </button>
+        </div>
+      
+        <div class="faq">
+          <h3 class="faq-question">
+            What's the object-oriented way to become wealthy?
+          </h3>
+          <p class="faq-answer">
+            Inheritance.
+            Lorem ipsum Odit assumenda dolores, earum nostrum repudiandae molestias magnam quasi cumque nihil quam possimus
+            quaerat fugiat soluta eum accusamus, vero illum, nam culpa!
+          </p>
+          <button class="faq-toggle">
+            <i class="uil uil-plus"></i>
+          </button>
+        </div>
+      
+        <div class="faq">
+          <h3 class="faq-question">
+            How many tickles does it take to tickle an octopus?
+          </h3>
+          <p class="faq-answer">
+            Ten-tickles! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio quidem esse deserunt laboriosam
+            veniam dolorum ipsa ipsum laborum, quibusdam neque.
+          </p>
+          <button class="faq-toggle">
+            <i class="uil uil-plus"></i>
+          </button>
+        </div>
+      
+        <div class="faq">
+          <h3 class="faq-question">
+            How much time should I invest in the workshop?
+          </h3>
+          <p class="faq-answer">
+            Depends on who are you asking.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eveniet harum!
+          </p>
+          <button class="faq-toggle">
+            <i class="uil uil-plus"></i>
+      
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- REVIEW SECTION -->
+
+  <section class="reviews">
+    <div class="container general_underline hide_scroll_animation">
+      <div class="h1_underline">
+        <h1 class="no-wrap"> Students Reviews</h1>
+      </div>
+      <div class="underline"></div>
+
+      <div class="reviews_content swiper mySwiper">
+        <div class="swiper-wrapper">
+          <ul class="reviews_list swiper-slide">
+            <li class="card prev">
+              <div class="reviewer_container">
+                <figure class="reviewer_picture">
+                  <img src="image/avatar1.jpg" alt="reviewer_picture" width="150" height="150">
+                  <figcaption class="sr-only">
+                    Reveivers Picture
+                  </figcaption>
+                </figure>
+                <div class="reviewer_details">
+                  <div class="reviewer_name">
+                    <h5>Angela Yu</h5>
+                  </div>
+                  <div class="reviewer_position">
+                    <small>CEO App  Brewerry</small>
+                  </div>
+                  <div class="reviewer_message">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, libero ut nemo officiis necessitatibus sint
+                      commodi nulla similique expedita.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="card act">
+              <div class="reviewer_container">
+                <figure class="reviewer_picture">
+                  <img src="image/avatar1.jpg" alt="reviewer_picture" width="150" height="150">
+                  <figcaption class="sr-only">
+                    Reveivers Picture
+                  </figcaption>
+                </figure>
+                <div class="reviewer_details">
+                  <div class="reviewer_name">
+                    <h5>Angela Yu</h5>
+                  </div>
+                  <div class="reviewer_position">
+                    <small>CEO App  Brewerry</small>
+                  </div>
+                  <div class="reviewer_message">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, libero ut nemo officiis necessitatibus sint
+                      commodi nulla similique expedita.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="card next">
+              <div class="reviewer_container">
+                <figure class="reviewer_picture">
+                  <img src="image/avatar1.jpg" alt="reviewer_picture" width="150" height="150">
+                  <figcaption class="sr-only">
+                    Reveivers Picture
+                  </figcaption>
+                </figure>
+                <div class="reviewer_details">
+                  <div class="reviewer_name">
+                    <h5>Angela Yu</h5>
+                  </div>
+                  <div class="reviewer_position">
+                    <small>CEO App Brewery</small>
+                  </div>
+                  <div class="reviewer_message">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, libero ut nemo officiis necessitatibus sint
+                      commodi nulla similique expedita.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul class="reviews_list swiper-slide">
+            <li class="card prev">
+              <div class="reviewer_container">
+                <figure class="reviewer_picture">
+                  <img src="image/avatar2.jpg" alt="reviewer_picture" width="150" height="150">
+                  <figcaption class="sr-only">
+                    Reveivers Picture
+                  </figcaption>
+                </figure>
+                <div class="reviewer_details">
+                  <div class="reviewer_name">
+                    <h5>Jack Bauer</h5>
+                  </div>
+                  <div class="reviewer_position">
+                    <small>CEO Hollywood</small>
+                  </div>
+                  <div class="reviewer_message">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, libero ut nemo officiis necessitatibus sint
+                      commodi nulla similique expedita.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="card act">
+              <div class="reviewer_container">
+                <figure class="reviewer_picture">
+                  <img src="image/avatar2.jpg" alt="reviewer_picture" width="150" height="150">
+                  <figcaption class="sr-only">
+                    Reveivers Picture
+                  </figcaption>
+                </figure>
+                <div class="reviewer_details">
+                  <div class="reviewer_name">
+                    <h5>Jack Bauer</h5>
+                  </div>
+                  <div class="reviewer_position">
+                    <small>CEO Hollywood</small>
+                  </div>
+                  <div class="reviewer_message">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, libero ut nemo officiis necessitatibus sint
+                      commodi nulla similique expedita.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="card next">
+              <div class="reviewer_container">
+                <figure class="reviewer_picture">
+                  <img src="image/avatar2.jpg" alt="reviewer_picture" width="150" height="150">
+                  <figcaption class="sr-only">
+                    Reveivers Picture
+                  </figcaption>
+                </figure>
+                <div class="reviewer_details">
+                  <div class="reviewer_name">
+                    <h5>Jack Bauer</h5>
+                  </div>
+                  <div class="reviewer_position">
+                    <small>CEO Hollywood</small>
+                  </div>
+                  <div class="reviewer_message">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, libero ut nemo officiis necessitatibus sint
+                      commodi nulla similique expedita.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul class="reviews_list swiper-slide">
+            <li class="card prev">
+              <div class="reviewer_container">
+                <figure class="reviewer_picture">
+                  <img src="image/avatar3.jpg" alt="reviewer_picture" width="150" height="150">
+                  <figcaption class="sr-only">
+                    Reveivers Picture
+                  </figcaption>
+                </figure>
+                <div class="reviewer_details">
+                  <div class="reviewer_name">
+                    <h5>ThankGod Enemuo</h5>
+                  </div>
+                  <div class="reviewer_position">
+                    <small>Full-Stack Engineer</small>
+                  </div>
+                  <div class="reviewer_message">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, libero ut nemo officiis necessitatibus sint
+                      commodi nulla similique expedita.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="card act">
+              <div class="reviewer_container">
+                <figure class="reviewer_picture">
+                  <img src="image/avatar3.jpg" alt="reviewer_picture" width="150" height="150">
+                  <figcaption class="sr-only">
+                    Reveivers Picture
+                  </figcaption>
+                </figure>
+                <div class="reviewer_details">
+                  <div class="reviewer_name">
+                    <h5>ThankGod Enemuo</h5>
+                  </div>
+                  <div class="reviewer_position">
+                    <small>Full-Stack Engineer</small>
+                  </div>
+                  <div class="reviewer_message">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, libero ut nemo officiis necessitatibus sint
+                      commodi nulla similique expedita.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="card next">
+              <div class="reviewer_container">
+                <figure class="reviewer_picture">
+                  <img src="image/avatar3.jpg" alt="reviewer_picture" width="150" height="150">
+                  <figcaption class="sr-only">
+                    Reveivers Picture
+                  </figcaption>
+                </figure>
+                <div class="reviewer_details">
+                  <div class="reviewer_name">
+                    <h5>ThankGod Enemuo</h5>
+                  </div>
+                  <div class="reviewer_position">
+                    <small>Full-Stack Engineer</small>
+                  </div>
+                  <div class="reviewer_message">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, libero ut nemo officiis necessitatibus sint
+                      commodi nulla similique expedita.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul class="reviews_list swiper-slide">
+            <li class="card prev">
+              <div class="reviewer_container">
+                <figure class="reviewer_picture">
+                  <img src="image/avatar4.jpg" alt="reviewer_picture" width="150" height="150">
+                  <figcaption class="sr-only">
+                    Reveivers Picture
+                  </figcaption>
+                </figure>
+                <div class="reviewer_details">
+                  <div class="reviewer_name">
+                    <h5>Karren Beauty</h5>
+                  </div>
+                  <div class="reviewer_position">
+                    <small>CEO Unveiling-TECH</small>
+                  </div>
+                  <div class="reviewer_message">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, libero ut nemo officiis necessitatibus sint
+                      commodi nulla similique expedita.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="card act">
+              <div class="reviewer_container">
+                <figure class="reviewer_picture">
+                  <img src="image/avatar4.jpg" alt="reviewer_picture" width="150" height="150">
+                  <figcaption class="sr-only">
+                    Reveivers Picture
+                  </figcaption>
+                </figure>
+                <div class="reviewer_details">
+                  <div class="reviewer_name">
+                    <h5>Karren Beauty</h5>
+                  </div>
+                  <div class="reviewer_position">
+                    <small>CEO Unveiling-TECH</small>
+                  </div>
+                  <div class="reviewer_message">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, libero ut nemo officiis necessitatibus sint
+                      commodi nulla similique expedita.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="card next">
+              <div class="reviewer_container">
+                <figure class="reviewer_picture">
+                  <img src="image/avatar4.jpg" alt="reviewer_picture" width="150" height="150">
+                  <figcaption class="sr-only">
+                    Reveivers Picture
+                  </figcaption>
+                </figure>
+                <div class="reviewer_details">
+                  <div class="reviewer_name">
+                    <h5>Karren Beauty</h5>
+                  </div>
+                  <div class="reviewer_position">
+                    <small>CEO Unveiling-TECH</small>
+                  </div>
+                  <div class="reviewer_message">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, libero ut nemo officiis necessitatibus sint
+                      commodi nulla similique expedita.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul class="reviews_list swiper-slide">
+            <li class="card prev">
+              <div class="reviewer_container">
+                <figure class="reviewer_picture">
+                  <img src="image/avatar5.jpg" alt="reviewer_picture" width="150" height="150">
+                  <figcaption class="sr-only">
+                    Reveivers Picture
+                  </figcaption>
+                </figure>
+                <div class="reviewer_details">
+                  <div class="reviewer_name">
+                    <h5>Eva Green</h5>
+                  </div>
+                  <div class="reviewer_position">
+                    <small>Data Scientist</small>
+                  </div>
+                  <div class="reviewer_message">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, libero ut nemo officiis necessitatibus sint
+                      commodi nulla similique expedita.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="card act">
+              <div class="reviewer_container">
+                <figure class="reviewer_picture">
+                  <img src="image/avatar5.jpg" alt="reviewer_picture" width="150" height="150">
+                  <figcaption class="sr-only">
+                    Reveivers Picture
+                  </figcaption>
+                </figure>
+                <div class="reviewer_details">
+                  <div class="reviewer_name">
+                    <h5>Eva Green</h5>
+                  </div>
+                  <div class="reviewer_position">
+                    <small>Data Scientist</small>
+                  </div>
+                  <div class="reviewer_message">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, libero ut nemo officiis necessitatibus sint
+                      commodi nulla similique expedita.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="card next">
+              <div class="reviewer_container">
+                <figure class="reviewer_picture">
+                  <img src="image/avatar5.jpg" alt="reviewer_picture" width="150" height="150">
+                  <figcaption class="sr-only">
+                    Reveivers Picture
+                  </figcaption>
+                </figure>
+                <div class="reviewer_details">
+                  <div class="reviewer_name">
+                    <h5>Eva Green</h5>
+                  </div>
+                  <div class="reviewer_position">
+                    <small>Data Scientist</small>
+                  </div>
+                  <div class="reviewer_message">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, libero ut nemo officiis necessitatibus sint
+                      commodi nulla similique expedita.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+  <!-- <div class="hr"> -->
+    <hr>
+  </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+      },
+    });
+  </script>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="footer_up">
+      <div class="footer_toggle">
+        <i class="footer_close uil uil-times"></i>
+      </div>
+
+      <div class="footer_container_up ">
+        <figure class="logo_container">
+          <img class="logo" src="/image/logo_200x200.png" alt="School logo" width="200" height="200">
+          <figcaption class="sr-only">School logo</figcaption>
+        </figure>
+        <div class="footer_content">
+          <div class="first_content">
+            <ul class="content_details">
+              <h3> Mobile App</h3>
+              <li> <a href="">Features</a></li>
+              <li> <a href="">Live share</a></li>
+              <li> <a href="">Video records</a></li>
+            </ul>
+          </div>
+          <div class="seconnd_content">
+            <ul class="content_details">
+              <h3> Community</h3>
+              <li> <a href="">Featured articles</a></li>
+              <li> <a href="">The portal</a></li>
+              <li> <a href="">Live events</a></li>
+            </ul>
+          </div>
+          <div class="third_content">
+            <ul class="content_details">
+              <h3> Company</h3>
+              <li> <a href="">About us</a></li>
+              <li> <a href="">Contact us</a></li>
+              <li> <a href="">History</a></li>
+            </ul>
+          </div>
+          <div class="fourth_content">
+            <div class="login">
+              <button class="ripple_button"> Login </button>
+            </div>
+            <div class="sign_up">
+              <button class="ripple_button sign_up_btn ">Sign Up</button>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <hr>
+
+    </div>
+
+    <div class="footer_down">
+      <div class="footer_toggle">
+        <i class="footer_open uil uil-bars"></i>
+      </div>
+
+      <div class="footer_down_container">
+        <div class="footer_down_left">
+          <p>&copy; Wilson College, <span class="current_year"></span>. We &#10084;&#65039; our students!<p>
+        </div>
+        <div class="footer_down_right">
+          <p>Follow us:</p>
+          <div class="footer_socials">
+            <figure class="socials_container">
+              <img class="logo" src="image/Social1_512x512.png" alt="Facebook icon" width="512" height="512">
+              <figcaption class="sr-only">Facebook icon</figcaption>
+            </figure>
+
+            <figure class="socials_container">
+              <img class="logo" src="image/Social2_512x512.png" alt="Youtobe icon" width="512" height="512">
+              <figcaption class="sr-only">Youtobe icon </figcaption>
+            </figure>
+
+            <figure class="socials_container">
+              <img class="logo" src="image/Social3_512x512.png" alt="LinkedIn icon" width="512" height="512">
+              <figcaption class="sr-only">LinkedIn icon </figcaption>
+            </figure>
+
+            <figure class="socials_container">
+              <img class="logo" src="image/Social4_512x512.png" alt="Twitter icon" width="512" height="512">
+              <figcaption class="sr-only"> Twitter icon </figcaption>
+            </figure>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </footer>
+</body>
+</html>

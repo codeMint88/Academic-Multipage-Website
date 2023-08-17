@@ -1,0 +1,266 @@
+
+.contact_page .container {
+  margin-top: 1.5rem;
+}
+
+.contact_title_p {
+  margin: 1.5rem;
+}
+
+.contact_page_container {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 1rem;
+  align-items: center;
+} 
+
+.contact_page_container p {
+  font-size: 1rem;
+}
+
+/* Contact page info starts here */
+
+.contact_page_info {
+  background: var(--color-bg-transparent);
+  padding: 3rem;
+  border-radius: 0.5rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.contact_img_container {
+  position: relative;
+  width: 450px;
+  height: 480px;
+  margin-inline: auto;
+  border-radius: 0.5rem;
+}
+
+.contact_img_container img {
+  position: absolute;
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  -webkit-filter: drop-shadow(3px 5px 5px #705e5e);
+  filter: drop-shadow(1px 5px 8px #776f6f);
+}
+
+.contact_us_details_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.contry_h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.contact_page_info .school_name span {
+  color: var(--color-about);
+}
+
+
+/* Form starts here */
+
+.contact_page_form {
+  background-color: var(--color-bg2);
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.contact_page_form  p {
+  font-size: 1.2rem;
+}
+
+.contact_page_form h1 {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.form_row {
+  position: relative;
+  margin: 3rem 0 3.3rem;
+
+}
+
+.form_input {
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid var(--color-white);
+  display: block;
+  padding: 0.8rem 0;
+}
+
+.form_input:focus-visible,
+.forminput:valid {
+  outline: 0;
+  border-color: var(--unique-brown4);
+}
+
+.form_input_message {
+  width: 100%;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  border: 0;
+  background-color: whitesmoke;
+}
+
+.form_input_message:focus-visible,
+.forminput_message:valid {
+  outline: 0;
+  border-color: var(--unique-brown4);
+}
+
+.form_label {
+  position: absolute;
+  top: 0.8rem;
+  left: 0;
+  font-size: 1.12rem;
+}
+
+
+::placeholder {
+  font-size: 1em;
+}
+
+.form_button {
+  display: inline-block;
+  width: 100%;
+  background-color: var(--color-bg);
+  border: 0;
+  padding: 0.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--color-white);
+  font-size: 0.8em;
+}
+
+.form_button:focus-visible {
+  outline: 0;
+}
+
+.form_button:active {
+  transform: scale(0.98);
+}
+
+.form_label span {
+  display: inline-block;
+  font-size: 1.1em;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form_input:focus+.form_label span,
+.form_input:valid+.form_label span {
+  color: var(--color-bg);
+  transform: translateY(-1.9rem);
+}
+
+
+@media screen and (width <= 1024px) {
+  .contact_page_info {
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .contact_page_info {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .contact_img_container {
+    width: 320px;
+    height: 350px;
+  }
+
+  .contry_h3 {
+    margin-bottom: 0.45rem;
+    font-size: 0.85em;
+  }
+
+  .contact_page_container p {
+    font-size: 0.7rem;
+  }
+
+  .contact_page_form p {
+    font-size: 0.8rem;
+    margin-top: 0.8em;
+  }
+
+  .form_label_message {
+    margin-left: 0.2em;
+  }
+
+  ::placeholder {
+    font-size: 0.8em;
+  }
+
+  .form_label {
+    top: 1.4rem;
+    font-size: 0.85rem;
+  }
+
+  .contact_page_form {
+    gap: 0;
+  }
+
+  .form_row {
+    margin: 2rem 0 2.3rem;
+  }
+
+}
+
+
+@media screen and (width <= 600px) {
+  .contact_page_container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact_img_container {
+    width: 18em;
+    height: 20em;
+  }
+
+  .contact_page_info {
+    padding: 1.2rem 0.9rem;
+  }
+
+  .contry_h3 {
+    font-size: 0.65em;
+  }
+
+  .contact_page_container p {
+    font-size: 0.55em;
+  }
+
+  .contact_page_form p {
+    font-size: 0.8em;
+  }
+
+  .form_label {
+    font-size: 0.85em;
+  }
+}
+
+
+@media screen and (width <= 330px) {
+  .contact_img_container {
+    width: 14em;
+    height: 17em;
+  }
+
+  .contact_page_form {
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,499 @@
+.about_page .container {
+  margin-top: 1.5rem;
+}
+
+.about_page_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+
+.tabs_panels {
+  text-align: left;
+}
+
+.tabs_panels p {
+  font-size: 0.85em;
+}
+
+.tabs_panels small {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.8em;
+}
+
+.tabs_panels .middle {
+  color: var(--color-about);
+}
+.tabs_panels .last {
+  color: #777;
+}
+
+/* .tab_sub_title {
+  color: var(--color-about);
+  display: none;
+  font-size: 1.1em;
+} */
+
+/* I had to make the flex items witdth to grow and take up the space between them */
+.about_tab_li {
+  flex-grow: 4;
+  height: 100%;
+}
+
+/* This makes the anchor tag take up the full size of its parent element i.e li */
+.about_tab_li a {
+  display: grid;
+  place-items: center;
+}
+
+.about_tab_li a:any-link {
+  color: inherit;
+}
+
+[role="tablist"] {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+[aria-selected="true"] {
+  text-decoration-thickness: 1em;
+  text-underline-offset: 5em;
+  color: var(--color-white);
+  background-color: var(--color-about);
+}
+
+
+@media screen and (width < 1024px) {
+  .about_page .container {
+    width: var(--container-width-md);
+  }
+}
+
+@media screen and (width < 600px) {
+  .about_page .container {
+    width: var(--container-width-sm);
+  }
+
+  [role="tablist"] {
+    justify-content: space-between;
+  }
+}
+
+/* extra styling to make the tabs look better that wasn't in the video */
+.tabs_container {
+  margin-top: 2rem;
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  background: hsl(0 0% 50% / 0.1);
+}
+
+.about_us {
+  background-color: var(--about-col3);
+  padding: 3rem 0;
+  border-radius: 0.5rem;
+  text-align: left;
+  overflow: hidden;
+}
+
+/* 
+===============
+About us top
+===============
+*/
+/* 
+===============
+About us top
+===============
+*/
+
+.about_us .about_us_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6rem;
+}
+
+.about_img_container {
+  position: relative;
+  margin-inline: auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+.about_img_container::after {
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 100px;
+  background-color: var(--about-col1);
+  z-index: 3;
+  top: 0;
+  transform: translateX(30em);
+  border-radius: 50%;
+}
+
+.about_img_container img {
+  position: absolute;
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+
+.about_us .about_us_top {
+  position: relative;
+  transform: translateX(-13rem);
+}
+
+.about_us .about_us_details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--about-col3);
+  width: 320px;
+  height: 220px;
+  padding: 1.5rem 1rem 1rem 1.5rem;
+  border-radius: 0.2rem;
+}
+
+
+.about_us .about_us_details p {
+  font-size: 0.8rem;
+  margin: 0.5rem 0;
+}
+
+.about_us .about_us_details span {
+  text-decoration-thickness: 0.2em;
+  text-underline-offset: 0.3rem;
+  color: var(--color-about);
+}
+
+
+.about_us .about_us_details a {
+  padding: 0.6rem 0.85rem;
+  border-radius: 25px;
+  background-color: var(--about-col1);
+  font-size: 0.7rem;
+}
+
+.about_us .about_us_details a:any-link {
+  color: var(--about-col4);
+}
+
+.about_us .about_us_link {
+  margin-top: 0.8rem;
+}
+
+@media screen and (width < 1024px) {
+  .about_us .about_us_top {
+    position: relative;
+    transform: translateX(-30px);
+  }
+
+  .about_img_container::after {
+    width: 60px;
+    height: 60px;
+    transform: translateX(22em);
+  }
+}
+
+
+@media screen and (width < 600px) {
+  .about_us {
+    padding: 2rem 0 0;
+  }
+  .about_us .about_us_container {
+    gap: 1.5rem;
+  }
+
+  .about_us .about_us_top {
+    position: relative;
+    transform: translateX(-50px);
+    padding: 0 3rem 0 1.5rem;
+  }
+
+  .about_img_container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about_img_container::after {
+    width: 70px;
+    height: 70px;
+    transform: translateX(17em);
+  }
+
+  .about_us .about_us_details {
+    width:230px;
+    height: 165px;
+    padding: 1rem 2rem 0.5rem 0.8rem;
+  }
+
+  .about_us .about_us_details p {
+    font-size: 0.6rem;
+    margin: 0.2rem 0;
+  }
+
+  .about_us .about_us_details h3 {
+    font-size: 0.8rem;
+    margin: 0.2rem 0;
+  }
+
+  .about_us .about_us_details a {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (width <= 360px) {
+  .about_img_container {
+    width: 140px;
+    height: 140px;
+  }
+    
+  .about_us .about_us_details {
+    width: 12em;
+    height: 100px;
+    padding: 1rem 0.5rem 0.5rem 0.8rem;
+  }
+
+  .about_us .about_us_details p {
+    font-size: 0.5rem;
+    margin: 0;
+  }
+}
+
+/* 
+===============
+about us bottom
+===============
+*/
+/* 
+===============
+about us bottom
+===============
+*/
+
+.bottom_notes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-content: center;
+  gap: 0.9rem;
+  padding: 0 1rem;
+}
+
+.bottom_notes article {
+  padding: 2rem 1.5rem; 
+  /* border: 2px solid red; */
+  border-radius: 0.2rem;
+  font-size: 1.02rem;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.bottom_notes h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.15rem;
+  font-weight: 800;
+}
+
+.bottom_notes article:nth-of-type(1),
+.bottom_notes article:nth-of-type(3) {
+  background-color: var(--about-col1);
+  color: var(--about-col4);
+}
+
+.bottom_notes article:nth-of-type(1) h3,
+.bottom_notes article:nth-of-type(3) h3{
+  color: var(--color-white);
+}
+
+.bottom_notes article:nth-of-type(2) {
+  background-color: var(--color-white);
+  color: var(--about-col2);
+}
+
+.bottom_notes article:nth-of-type(2) h3 {
+  color: var(--about-col1);
+}
+
+
+@media screen and (width <= 1024px) {
+  .bottom_notes {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bottom_notes {
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (width <= 600px) {
+  .bottom_notes {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .bottom_notes article {
+    font-size: clamp(0.6em, 4.5vw,0.98em);
+  }
+
+  .bottom_notes {
+    padding: 3rem;
+  }
+}
+
+@media screen and (width <= 415px) {
+  .tabs_container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+  }
+
+  .bottom_notes {
+    padding-inline: 1rem;
+  }
+  
+}
+
+/* 
+===============
+Team section begins here
+===============
+*/
+/* 
+===============
+Team section begins here
+===============
+*/
+
+
+.team_section {
+  background: var(--color-bg-transparent);
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.team_member_container {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 2.5rem 0 2rem;
+}
+
+.team_member_container .tm {
+  position: relative;
+  padding: 2rem;
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-bg);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.team_member_container .tm:hover {
+  background-color: transparent;
+  color: var(--color-black1);
+}
+
+.team_member_container .tm_img {
+  display: block;
+  border-radius: 0.5rem;overflow: hidden;
+}
+
+.team_member_container .tm_img img {
+  filter: grayscale(100%);
+  transition: var(--transition);
+}
+
+.team_member_container .tm:hover img {
+  filter: grayscale(0%);
+}
+
+
+.team_section h5 {
+  margin: 0.9rem 0;
+  letter-spacing: 0.08rem;
+}
+
+.team_section p {
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
+  color: var(--color-light);
+  transition: var(--transition);
+}
+
+.team_member_container .tm:hover p {
+  color: var(--color-black1);
+}
+
+
+.team_section .tm_social {
+  position: absolute;
+  top: 50%;
+  right: -100px;
+  transform: translateY(-50%);
+  border: 0.5px solid var(--color-bg-transparent);
+  border-radius: 0.8rem 0 0 0.8rem;
+  background-color: var(--color-bg2);
+  overflow: hidden;
+  transition: var(--transition);
+  /* border: 0.8px solid var(--color-bg); */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.team_member_container .tm:hover .tm_social {
+  right: -2px;
+}
+
+
+.team_section .tm_social i {
+  padding: 0.7rem;
+  width: 100%;
+  border: #777;
+  transition: var(--transition);
+}
+
+.team_section .tm_social i:hover {
+  background-color: var(--color-bg-transparent);
+}
+
+
+@media screen and (width <= 1024px) {
+  .team_member_container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .team_section {
+    padding-inline: 1.4rem;
+  }
+}
+
+@media screen and (width <= 600px) {
+  .team_member_container {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .team_section {
+    padding-inline: 0.5rem;
+  }
+}
+
+@media screen and (width <= 375px) {
+  .team_member_container {
+    grid-template-columns: 1fr;
+  }
+
+  .team_section {
+    padding-inline: 1rem;
+  }
+}

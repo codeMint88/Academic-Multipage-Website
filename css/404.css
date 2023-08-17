@@ -1,0 +1,133 @@
+.page_404 {
+  min-height: fit-content;
+  padding: 2.5em 0;
+}
+
+.container_404 {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  align-items: center;
+  text-align: left;
+}
+
+.details_404 {
+  padding: 3em;
+} 
+
+.details_404 h1 {
+  margin: 2rem 0 1.36rem;
+  text-align: left;
+  font-size: 2.7em;
+}
+
+.details_404 p {
+  font-size: clamp(0.7em, 3vw, 1em);
+  line-height: 1.7;
+}
+
+.button_container_404 {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  max-width: 50%;
+}
+
+.image_container_404 {
+  position: relative;
+  max-width: 450px;
+  max-height: 420px;
+  margin-inline: auto;
+}
+
+
+.rbn {
+  padding: 0.4rem 2rem;
+  font-size: 1em;
+  border-radius: 30%;
+}
+
+.go_home_ripple_btn {
+  background-color: var(--color-white);
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+  color: var(--color-black);
+  transition: var(--transition);
+}
+
+.go_home_ripple_btn:focus-visible {
+  outline: none;
+}
+
+.go_home_ripple_btn:hover {
+  color: var(--color-black1);
+  border-color: var(--color-black);
+  box-shadow: none;
+}
+
+.go_home_ripple_btn:active {
+  scale: 1;
+}
+
+.hr_404 {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+@media screen and (width <= 1024px) {
+  .page_404 .container {
+    width: var(--container-width-md);
+  }
+
+  .button_container_404 {
+    max-width: 80%;
+  }
+
+  .image_container_404 {
+    max-width: 400px;
+    max-height: 370px;
+    margin-right: 1.3rem;
+  }
+}
+
+@media screen and (width <= 800px) {
+  .button_container_404 {
+    max-width: 85%;
+  }
+}
+
+
+@media screen and (width <= 600px) {
+  .page_404 .container {
+    width: var(--container-width-sm);
+  }
+
+  .details_404 {
+    padding: 2.5em;
+  }
+
+  .container_404 {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image_container_404 {
+    max-width: 270px;
+    max-height: 230px;
+  }
+
+  .button_container_404 {
+    max-width: 100%;
+  }
+
+  .rbn {
+    padding: 0.3rem 1.4rem;
+    font-size: 1.2em;
+    border-radius: 20%;
+  }
+
+  .details_404 h1 {
+    font-size: 2.5em;
+  }
+}
