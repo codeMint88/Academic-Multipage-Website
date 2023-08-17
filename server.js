@@ -1,0 +1,47 @@
+const express = require("express");
+const app = express();
+const path = require("path");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const ejs = require("ejs");
+const _ = require("lodash");
+const corsOptions = require("./config/corsOptions");
+const { logger } = require("./middleware/logEvents");
+const errorHandler = require("./middleware/errorHandler");
+const PORT = process.env.PORT || 3500;
+
+app.set("view engine", "ejs");
+
+// custom middleware logger
+app.use(logger);
+
+// Cross Origin Resource Sharing
+app.use(cors(corsOptions));
+
+// built-in middleware to handle urlencoded form data
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// built-in middleware for json
+app.use(express.json());
+
+//serve static files
+app.use("/", express.static(path.join(__dirname, "/public")));
+
+// routes
+app.use("/", require("./routes/root"));
+app.use("/posts", require("./routes/api/posts"));
+
+app.all("*", (req, res) => {
+  res.status(404);
+  if (req.accepts("html")) {
+    res.render("404");
+  } else if (req.accepts("json")) {
+    res.json({ error: "404 Not Found" });
+  } else {
+    res.type("txt").send("404 Not Found");
+  }
+});
+
+app.use(errorHandler);
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

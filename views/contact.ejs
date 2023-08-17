@@ -1,0 +1,83 @@
+<%- include("partials/header"); -%>
+
+  <main class="contact_page">
+    <div class="container hide_scroll_animation">
+      <div class="section_title">
+        <h1 id="tab_title">A Click Away</h1>
+      </div>
+      <div class="section_title_underline"></div>
+      <p class="contact_title_p">Any questions or remarks? Just write us a message!</p>
+      <div class="contact_page_container hide_scroll_animation from_left">
+        <section class="contact_page_info_container">
+      
+          <div class="contact_page_info">
+            <div class="contact_us_img">
+              <figure class="contact_img_container">
+                <img src="/image/contact_539x552.png" alt="contact page image" width="626" height="552">
+                <figcaption class="sr-only"> contact page image </figcaption>
+              </figure>
+            </div>
+      
+            <div class="contact_us_details_container">
+              <article class="contact_us_details">
+                <h3 class="contry_h3">
+                  Sydney
+                </h3>
+                <p>45 Pirrama Rd.</p>
+                <p>pyrmont NSW 2022</p>
+              </article>
+      
+              <article class="contact_us_details">
+                <h3 class="contry_h3">
+                  Melbourne
+                </h3>
+                <p>163 Collins St.</p>
+                <p>Melbourne VIC 300</p>
+              </article>
+      
+              <article class="contact_us_details">
+                <h3 class="contry_h3">
+                  Los Angeles
+                </h3>
+                <p>340 Main St. Venice</p>
+                <p>CA 90291, USA</p>
+              </article>
+            </div>
+      
+            <div class="school_name">
+              <p><em>Wilson <span>College</span></em></p>
+            </div>
+          </div>
+      
+        </section>
+      
+        <section class="contact_page_form">
+          <h1>Get in Touch</h1>
+          <p>Have some enquiry or some feedback for us? Fill out the form below to contact our team.</p>
+          <form>
+            <div class="form_row">
+              <input type="text" id="form_name" class="form_input" required>
+              <label for="form_name" class="form_label">Name</label>
+            </div>
+      
+            <div class="form_row">
+              <input type="email" id="form_email" class="form_input" required>
+              <label for="form_email" class="form_label">Email</label>
+            </div>
+      
+            <div class="form_row">
+              <textarea class="form_input_message" name="form_message" id="form_message" rows="5" placeholder="Write us a message"></textarea>
+            </div>
+      
+            <button class="form_button">Submit</button>
+          </form>
+        </section>
+      </div>
+    </div>
+    
+  </main>
+
+
+  <script src="JS/contact.js"></script>
+
+  <%- include("partials/footer"); -%>
