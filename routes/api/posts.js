@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const employeesController = require("../../controllers/postController");
+const postController = require("../../controllers/postController");
 
 router
   .route("/")
-  .get(employeesController.getAllPosts)
-  .post(employeesController.createNewPost)
-  .put(employeesController.updatePost)
-  .delete(employeesController.deletePost);
+  .get(postController.getAllPosts)
+  .post(postController.createNewPost)
+  .put(postController.updatePost)
+  .delete(postController.deletePost);
 
-router.route("/:id").get(employeesController.getPost);
+router.route("/:id").get(postController.getPost);
 
 module.exports = router;
