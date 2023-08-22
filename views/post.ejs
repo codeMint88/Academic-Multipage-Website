@@ -109,5 +109,15 @@
       </div>
     </div>
   </main>
+  <script type="text/javascript">
+    // Wait for the page to be fully loaded
+    document.addEventListener("DOMContentLoaded", () => {
+      // Get the element with id "post_page"
+      const postPageElement = document.getElementById("post_page");
+
+      // Scroll the element into view
+      postPageElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
 
   <%- include("partials/footer"); -%>
