@@ -1,4 +1,4 @@
-const Course = require("../model/data");
+const { Course } = require("../model/data");
 const multer = require("multer");
 
 const storage = multer.diskStorage({
@@ -10,6 +10,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage }).single("courseImage");
 
+// Using asynchronous operation to get the course document from our database
 const getAllPosts = async (req, res) => {
   try {
     const foundArticles = await Course.find({});
@@ -19,6 +20,7 @@ const getAllPosts = async (req, res) => {
   }
 };
 
+// Using thenables to create and save the course when we post the course contents to our api
 const createNewPost = function (req, res, next) {
   upload(req, res, (error) => {
     if (error) {
@@ -71,6 +73,7 @@ const createNewPost = function (req, res, next) {
 // };
 
 // Using async operation to get a particular course post in ours database and render it using the post ejs file. This also takes care of the explore button in the courses page. When clicked, the id of the course is added to the url the route (ejs route templating) then takes it up and get the course id using req.params.coursTitle
+
 const getPost = async (req, res) => {
   const currentRouteId = req.params.courseTitle;
   try {

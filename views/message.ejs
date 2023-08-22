@@ -8,7 +8,7 @@
             <img src="/image/babydog_400x250.png" alt="puppy image" width="400" height="250">
             <figcaption class="sr-only">puppy</figcaption>
           </figure>
-          <h3>Hi!&#9995 Message received...</h3>
+          <h3>Hi! <span><%= senderName %></span>...&#9995</h3>
         </div>
         <div class="message_details">
           <p>We are delighted to receive a feedback from you&#128536</p>
@@ -33,5 +33,11 @@
       </section>
     </div>
   </main>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+      const postPageElement = document.getElementById("message_page");
+      postPageElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
 
   <%- include("partials/footer"); -%>

@@ -53,6 +53,8 @@ app.use("/", express.static(path.join(__dirname, "/uploads")));
 app.use("/", require("./routes/root"));
 app.use("/posts", require("./routes/api/posts"));
 
+app.use(errorHandler);
+
 app.all("*", (req, res) => {
   res.status(404);
   if (req.accepts("html")) {
@@ -63,7 +65,5 @@ app.all("*", (req, res) => {
     res.type("txt").send("404 Not Found");
   }
 });
-
-app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

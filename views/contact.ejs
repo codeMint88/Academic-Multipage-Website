@@ -54,19 +54,19 @@
         <section class="contact_page_form">
           <h1>Get in Touch</h1>
           <p>Have some enquiry or some feedback for us? Fill out the form below to contact our team.</p>
-          <form>
+          <form action="/contact" method="post">
             <div class="form_row">
-              <input type="text" id="form_name" class="form_input" required>
+              <input type="text" id="form_name" class="form_input" name="name" required>
               <label for="form_name" class="form_label">Name</label>
             </div>
       
             <div class="form_row">
-              <input type="email" id="form_email" class="form_input" required>
+              <input type="email" id="form_email" class="form_input" name="email" required>
               <label for="form_email" class="form_label">Email</label>
             </div>
       
             <div class="form_row">
-              <textarea class="form_input_message" name="form_message" id="form_message" rows="5" placeholder="Write us a message"></textarea>
+              <textarea class="form_input_message" id="form_message" rows="5" placeholder="Write us a message" name="message" required></textarea>
             </div>
       
             <button class="form_button">Submit</button>

@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+
+// Create courseSchema object and model
 const courseSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -19,6 +21,24 @@ const courseSchema = new mongoose.Schema({
   },
 });
 
-const courseModel = mongoose.model("Course", courseSchema);
+const Course = mongoose.model("Course", courseSchema);
 
-module.exports = courseModel;
+// Create messageSchema object and model
+const messageSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, "Please check your data entry; no name was entered."],
+  },
+  email: {
+    type: String,
+    required: [true, "Please check your data entry; no email was entered."],
+  },
+  message: {
+    type: String,
+    required: [true, "Please check your data entry; no message was entered."],
+  },
+});
+
+const Message = mongoose.model("Message", messageSchema);
+
+module.exports = { Course, Message };
