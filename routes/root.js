@@ -15,6 +15,7 @@ router.get("/courses(.html)?", async (req, res) => {
       coursesData: foundCourses,
     });
   } catch (error) {
+    res.send(error);
     console.log(error);
   }
 });

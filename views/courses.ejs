@@ -19,7 +19,7 @@
               <p class="card_excerpt" id="excerpt">
                 <%= course.description.substring(0, 160) + " >>>" %>
               </p>
-              <button class="ripple_button"> Explore </button>
+              <a href="/posts/<%= course.id %> "><button class="ripple_button"> Explore </button></a>
             </div>
           </div>
         <% }) %>

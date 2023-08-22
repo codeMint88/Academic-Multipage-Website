@@ -46,6 +46,7 @@ app.use(express.json());
 
 //serve static files
 app.use("/", express.static(path.join(__dirname, "/public")));
+app.use("/posts", express.static(path.join(__dirname, "/public")));
 app.use("/", express.static(path.join(__dirname, "/uploads")));
 
 // routes
@@ -66,28 +67,3 @@ app.all("*", (req, res) => {
 app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-// const mongoose = require("mongoose");
-// const courseSchema = new mongoose.Schema({
-//   title: {
-//     type: String,
-//     required: [true, "Please check your data entry; no title specified."],
-//   },
-//   description: {
-//     type: String,
-//     required: [true, "Please check your data entry; no description specified."],
-//   },
-//   image: {
-//     data: Buffer,
-//     contentType: String,
-//   },
-//   created: {
-//     type: Date,
-//     required: true,
-//     default: Date.now,
-//   },
-// });
-
-// const courseModel = mongoose.model("Course", courseSchema);
-
-// module.exports = courseModel;

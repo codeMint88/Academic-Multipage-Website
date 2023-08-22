@@ -1,17 +1,16 @@
 <%- include("partials/header"); -%>
+  <script> document.getElementById("post_page").focus(); </script>
 
   <main class="post_page" id="post_page">
     <div class="notification">
-      <h3>Internet Application Development</h3>
+      <h3><%= courseData.title %></h3>
     </div>
 
     <div class="timeline">
       <div class="timeline_container left">
         <div class="content">
           <h2>Overview</h2>
-          <p>Internet Application Development is a master's sequence in Information Systems and is ideal for students seeking
-          advanced knowledge in web development. The program provides specialized education in emerging technologies, including
-          mobile application development.</p>
+          <p><%= courseData.description %></p>
         </div>
       </div>
     

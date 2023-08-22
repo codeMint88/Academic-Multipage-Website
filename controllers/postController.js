@@ -10,7 +10,14 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage }).single("courseImage");
 
-const getAllPosts = (req, res) => {};
+const getAllPosts = async (req, res) => {
+  try {
+    const foundArticles = await Course.find({});
+    res.send(foundArticles);
+  } catch (err) {
+    res.send(err);
+  }
+};
 
 const createNewPost = function (req, res, next) {
   upload(req, res, (error) => {
@@ -27,7 +34,7 @@ const createNewPost = function (req, res, next) {
         .save()
         .then(() => {
           res
-            .status(201)
+            .status(201) //Status 201 means success or created
             .send("Successfully uploaded the course info to coursesDB");
         })
         .catch((error) => {
@@ -37,6 +44,7 @@ const createNewPost = function (req, res, next) {
   });
 };
 
+// Using asynchronous operation to create and save the course
 // const createNewPost = async function (req, res, next) {
 //   try {
 //     upload(req, res, async (error) => {
@@ -62,16 +70,82 @@ const createNewPost = function (req, res, next) {
 //   }
 // };
 
-const updatePost = (req, res) => {};
+// Using async operation to get a particular course post in ours database and render it using the post ejs file. This also takes care of the explore button in the courses page. When clicked, the id of the course is added to the url the route (ejs route templating) then takes it up and get the course id using req.params.coursTitle
+const getPost = async (req, res) => {
+  const currentRouteId = req.params.courseTitle;
+  try {
+    const foundCourses = await Course.find();
+    foundCourses.forEach((course) => {
+      if (course._id.toString() === currentRouteId) {
+        res.render("post", {
+          courseData: course,
+        });
+      }
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};
 
-const deletePost = (req, res) => {};
+// Replace a whole course in the Database with a new one
+const putNewPost = async (req, res) => {
+  try {
+    const newDoc = await Course.findOneAndUpdate(
+      { title: req.params.courseTitle },
+      {
+        $set: {
+          title: req.body.title,
+          description: req.body.description,
+          image: req.file.filename,
+        },
+      },
+      { new: true }
+    );
+    // if the condition does not exist because the url current route param does not match any title in the article, it throws null instead of an error
+    if (newDoc === null) {
+      res.send(`No title matched ${req.params.courseTitle} in the document`);
+    } else {
+      res.send("Successfully updated the selected course to:\n" + newDoc);
+    }
+  } catch (err) {
+    res.status(500).send(err);
+  }
+};
 
-const getPost = (req, res) => {};
+// Updates some details of a particular course with title courseTitle in the Database with a new one
+const patchPost = async (req, res) => {
+  try {
+    const updatedDoc = await Course.findOneAndUpdate(
+      { title: req.params.courseTitle },
+      { $set: req.body },
+      { new: true }
+    );
+
+    if (updatedDoc === null) {
+      res.send(`No title matched ${req.params.courseTitle} in the document`);
+    } else {
+      res.send("Successfully updated the selected course to: " + updatedDoc);
+    }
+  } catch (err) {
+    res.status(500).send(err);
+  }
+};
+
+// Deletes a particular course with title courseTitle in the Database with a new one
+const deletePost = async (req, res) => {
+  try {
+    await Course.deleteOne({ title: req.params.courseTitle });
+    res.send("Successfully deleted the corresponding course.");
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};
 
 module.exports = {
   getAllPosts,
   createNewPost,
-  updatePost,
+  putNewPost,
+  patchPost,
   deletePost,
   getPost,
 };
