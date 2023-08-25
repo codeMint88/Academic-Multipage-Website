@@ -9,6 +9,10 @@
   gap: 3rem;
 }
 
+#course_2nd_display {
+  display: none;
+}
+
 @media screen and (width < 1024px){
   .course_main .container {
     width: var(--container-width-md);

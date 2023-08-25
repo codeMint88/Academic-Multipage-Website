@@ -4,30 +4,14 @@
 
     <!-- Courses Page -->
     <section>
-      <div class="section_title">
+      <div class="section_title" id="page_id">
         <h1 id="tab_title">Course Catelogue</h1>
       </div>
       <div class="section_title_underline"></div>
-      <div class="courses_container container" id="courses_container">
-        <% coursesData.forEach((course)=> { %>
-          <div class="courses_card">
-            <div class="card_header" id="course_header"> <img src="<%= course.image %>"/> </div>
-            <div class="card_content">
-              <h3 class="card_title_text" id="title">
-                <%= course.title %>
-              </h3>
-              <p class="card_excerpt" id="excerpt">
-                <%= course.description.substring(0, 160) + " >>>" %>
-              </p>
-              <a href="/posts/<%= course.id %> "><button class="ripple_button"> Explore </button></a>
-            </div>
-          </div>
-        <% }) %>
-
-
-        
+      
+      <div class="courses_container container " id="course_1st_display">
         <!-- Cards -->
-        <!-- <div class="courses_card">
+        <div class="courses_card">
           <div class="card_header animated_bg" id="course_header"> &nbsp; </div>
           <div class="card_content">
             <h3 class="card_title animated_bg animated_bg_text" id="title"> &nbsp; </h3>
@@ -39,8 +23,26 @@
             </p>
             <div class="course_link animated_bg" id="course_link">&nbsp;</div>
           </div>
-        </div> -->
+        </div>
       </div>
+
+      <div class="courses_container container" id="course_2nd_display">
+        <% coursesData.forEach((course)=> { %>
+          <div class="courses_card">
+            <div class="card_header" id="course_header"> <img src="<%= course.image %>" /> </div>
+            <div class="card_content">
+              <h3 class="card_title_text" id="title">
+                <%= course.title %>
+              </h3>
+              <p class="card_excerpt" id="excerpt">
+                <%= course.description.substring(0, 160) + " >>>" %>
+              </p>
+              <a href="/posts/<%= course.id %> "><button class="ripple_button"> Explore </button></a>
+            </div>
+          </div>
+          <% }) %>
+      </div>
+
     </section>
   </main>
 

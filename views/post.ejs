@@ -1,7 +1,7 @@
 <%- include("partials/header"); -%>
   <script> document.getElementById("post_page").focus(); </script>
 
-  <main class="post_page" id="post_page">
+  <main class="post_page" id="page_id">
     <div class="notification">
       <h3><%= courseData.title %></h3>
     </div>
@@ -65,7 +65,9 @@
             <li> <p>Fall Term — March 1 preferred; May 1 final</p></li>
             <li><p>Spring Term — Currently not accepting applications for spring admission.</p></li>
           </ul>
-          <button class="ripple_button apply_btn">Apply Now!</button>
+          <a href="/unavailable">
+            <button class="ripple_button apply_btn">Apply Now!</button>
+          </a>
         </div>
       </div>
     
@@ -109,15 +111,5 @@
       </div>
     </div>
   </main>
-  <script type="text/javascript">
-    // Wait for the page to be fully loaded
-    document.addEventListener("DOMContentLoaded", () => {
-      // Get the element with id "post_page"
-      const postPageElement = document.getElementById("post_page");
-
-      // Scroll the element into view
-      postPageElement.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  </script>
 
   <%- include("partials/footer"); -%>

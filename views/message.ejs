@@ -1,6 +1,6 @@
 <%- include("partials/header"); -%>
 
-  <main class="message_page" id="message_page">
+  <main class="message_page" id="page_id">
     <div class="container">
       <section class="message_container">
         <div class="message">
@@ -33,11 +33,5 @@
       </section>
     </div>
   </main>
-  <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", () => {
-      const postPageElement = document.getElementById("message_page");
-      postPageElement.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  </script>
 
   <%- include("partials/footer"); -%>

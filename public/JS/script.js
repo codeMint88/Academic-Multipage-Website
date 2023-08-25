@@ -1,12 +1,25 @@
 // Get Current Year Using JS
 
-currentYear = document.querySelectorAll(".current_year");
+const currentYear = document.querySelectorAll(".current_year");
 const date = new Date();
 const year = date.getFullYear();
 
 currentYear.forEach((newYear) => {
   newYear.innerHTML = year;
 });
+
+// Page scroll into view starts here
+
+// Wait for the page to be fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  // Get the element with id "page_id"
+  const pageElementId = document.getElementById("page_id");
+
+  // Scroll the element into view
+  pageElementId.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+// Page scroll into view ends here
 
 // js for nav starts here
 
@@ -29,10 +42,11 @@ toggleNav.addEventListener("click", () => {
 // Nav tab starts here
 const activePage = window.location.pathname;
 const navLinks = document.querySelectorAll(".nav_list");
+console.log(activePage);
 
 navLinks.forEach((link) => {
-  // check if any of the links has the current page pathname
-  if (link.href.includes(`${activePage}`)) {
+  // check if any of the links has the current page pathname as part of its href
+  if (activePage.startsWith(link.getAttribute("href"))) {
     // if found, add the class nav_link_active to its class list
     link.classList.add("nav_link_active");
   }
@@ -138,14 +152,19 @@ displayNums.forEach((num) => {
 // Social Media Analytics ends here
 
 // Search Widget Starts here
+const searchContainer = document.querySelector(".search-container");
+const searchInput = document.getElementById("searchQuery");
+const searchButton = document.getElementById("searchButton");
 
-const search = document.querySelector(".search-container");
-const input = document.querySelector(".input");
-const btn = document.querySelector(".btn");
+searchButton.addEventListener("click", (event) => {
+  if (!searchInput.value.trim()) {
+    event.preventDefault(); // Prevent form submission
+  }
+});
 
-btn.addEventListener("click", () => {
-  search.classList.toggle("active");
-  input.focus();
+searchButton.addEventListener("click", () => {
+  searchContainer.classList.add("active");
+  searchInput.focus();
 });
 
 // Search Widget ends here

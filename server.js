@@ -4,7 +4,6 @@ const path = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-const _ = require("lodash");
 require("dotenv").config();
 const corsOptions = require("./config/corsOptions");
 const { logger } = require("./middleware/logEvents");
@@ -45,6 +44,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 //serve static files
+// app.use(express.static(path.join(__dirname, "/public")));
 app.use("/", express.static(path.join(__dirname, "/public")));
 app.use("/posts", express.static(path.join(__dirname, "/public")));
 app.use("/", express.static(path.join(__dirname, "/uploads")));
@@ -53,17 +53,23 @@ app.use("/", express.static(path.join(__dirname, "/uploads")));
 app.use("/", require("./routes/root"));
 app.use("/posts", require("./routes/api/posts"));
 
-app.use(errorHandler);
-
 app.all("*", (req, res) => {
   res.status(404);
   if (req.accepts("html")) {
-    res.render("404");
+    const infoDisplay =
+      "The page you requested for was not found, and we have a fine guess why. If you typed the URL directly, please make sure the spelling is correct. If you clicked on a link to get here, the link is outdated. What can you do? Have no fear, help is near!";
+    const imageURL = "image/404_img_1351x1213-transformed.png";
+    res.render("404", {
+      infoDisplay,
+      imageURL,
+    });
   } else if (req.accepts("json")) {
     res.json({ error: "404 Not Found" });
   } else {
     res.type("txt").send("404 Not Found");
   }
 });
+
+app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

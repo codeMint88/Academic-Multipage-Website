@@ -30,9 +30,12 @@
     <div class="header_container">
       <div class="header_slide_container">
         <nav class="nav_container">
-          <figure class="logo_container">
-            <img class="logo" src="/image/logo_200x200.png" alt="School logo" width="200" height="200">
-          </figure>
+          <a href="/home">
+            <figure class="logo_container">
+              <img class="logo" src="/image/logo_200x200.png" alt="School logo" width="200" height="200">
+            </figure>
+          </a>
+          
 
           <!-- aria-controls shows that this button controls the nav_menu. sr-only hides things visually but not the screen readers i.e it's visually invisible but screen readers can read it-->
           <button aria-controls="nav_menu" aria-expanded="false" class="mobile_nav_toggle">
@@ -111,9 +114,11 @@
 
 
             <div>
-              <button class="ripple_button enrol_ripple_btn">
-                <p>Enrol Now!</p>
-              </button>
+              <a href="/unavailable">
+                <button class="ripple_button enrol_ripple_btn">
+                  <p>Enrol Now!</p>
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -158,14 +163,17 @@
         </div>
       </div>
 
-      <div class="header_search_widget">
-        <div class="search-container">
-          <input type="text" class="input" placeholder="Search...">
-          <button class="btn">
-            <i class="fas fa-search"></i>
-          </button>
+      <form action="/search" method="post">
+        <div class="header_search_widget">
+          <div class="search-container">
+            <input type="text" class="input" placeholder="Search..." name="searchQuery" id="searchQuery">
+            <button class="btn" id="searchButton" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
         </div>
-      </div>
+      </form>
+      
 
     </div>
   </section>

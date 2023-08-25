@@ -32,11 +32,16 @@
   max-width: 50%;
 }
 
-.image_container_404 {
+
+.image_404 {
   position: relative;
   max-width: 450px;
   max-height: 420px;
   margin-inline: auto;
+}
+
+.image_container_404 {
+  width: 100%;
 }
 
 
@@ -82,7 +87,7 @@
     max-width: 80%;
   }
 
-  .image_container_404 {
+  .image_404 {
     max-width: 400px;
     max-height: 370px;
     margin-right: 1.3rem;
@@ -112,9 +117,14 @@
     align-items: center;
   }
 
-  .image_container_404 {
+  .image_404 {
     max-width: 270px;
     max-height: 230px;
+    margin-inline: auto;
+  }
+
+  .image_container_404 {
+    width: 100%;
   }
 
   .button_container_404 {
