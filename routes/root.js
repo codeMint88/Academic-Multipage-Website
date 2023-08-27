@@ -11,10 +11,20 @@ router.get("^/$", (req, res) => {
   res.redirect(301, "/home");
 });
 
-router.get("index(.html)?|/home(.html)?", (req, res) => {
-  res.render("home");
+// Home Page Rendering
+router.get("index(.html)?|/home(.html)?", async (req, res) => {
+  try {
+    const foundCourses = await Course.find();
+    res.render("home", {
+      courseData: foundCourses,
+    });
+  } catch (error) {
+    res.send(error);
+    console.log(error);
+  }
 });
 
+// Courses Page Rendering
 router.get("/courses(.html)?", async (req, res) => {
   try {
     const foundCourses = await Course.find();
@@ -27,10 +37,12 @@ router.get("/courses(.html)?", async (req, res) => {
   }
 });
 
+// Contact Page Rendering
 router.get("/contact(.html)?", (req, res) => {
   res.render("contact");
 });
 
+// Contact Page Rendering when user sends a message
 router.post("/contact(.html)?", async (req, res) => {
   try {
     const newMessage = new Message({
@@ -46,10 +58,12 @@ router.post("/contact(.html)?", async (req, res) => {
   }
 });
 
+// About Page Rendering
 router.get("/about(.html)?", (req, res) => {
   res.render("about");
 });
 
+// Unavailable Page Rendering
 router.get("/unavailable(.html)?", (req, res) => {
   const notAvailableInfo =
     "The page you requested for is not available at the moment, and we have a fine guess why. This is a progressive project, because of that, this page you are looking for is not available in this version. Hopefully, it will be available in the next update. Yoc can fill the contact us form if you need an update when this page is available. What can you do? Have no fear, help is near!";
@@ -60,12 +74,13 @@ router.get("/unavailable(.html)?", (req, res) => {
   });
 });
 
+// Search Query handler
 router.post("/search", async (req, res) => {
-  const searchQuery = _.lowerCase(req.body.searchQuery);
-  console.log(searchQuery);
+  const searchQuery = _.lowerCase(req.body.searchQuery); // NB: The query is not case-sensity, therefore the lodash isn't needed here
 
   try {
     // Search for data in the database
+    // The $text: { $search: searchQuery } part is a MongoDB query that uses the $text index to search for documents that contain the searchQuery text.
     const searchData = await Course.find({
       $text: { $search: searchQuery },
     });

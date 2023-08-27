@@ -118,18 +118,27 @@ const putNewPost = async (req, res) => {
 // Updates some details of a particular course with title courseTitle in the Database with a new one
 const patchPost = async (req, res) => {
   try {
+    // console.log("Request Params:", req.params);
+    // console.log("Request Body:", req.body);
+    // req.body contains all the fields you want to update
+
     const updatedDoc = await Course.findOneAndUpdate(
       { title: req.params.courseTitle },
       { $set: req.body },
       { new: true }
     );
 
-    if (updatedDoc === null) {
-      res.send(`No title matched ${req.params.courseTitle} in the document`);
-    } else {
-      res.send("Successfully updated the selected course to: " + updatedDoc);
+    // console.log("Updated Document:", updatedDoc);
+
+    if (!updatedDoc) {
+      return res
+        .status(404)
+        .send(`No course with title ${req.params.courseTitle} found`);
     }
+
+    res.send("Successfully updated the selected course to: " + updatedDoc);
   } catch (err) {
+    // console.error("Error:", err);
     res.status(500).send(err);
   }
 };

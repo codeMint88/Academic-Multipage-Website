@@ -21,6 +21,9 @@ const courseSchema = new mongoose.Schema({
   },
 });
 
+// Create a text index on the field (description) you want to perform full-text search on, when the user sends a post request using the search bar
+courseSchema.index({ description: "text" });
+
 const Course = mongoose.model("Course", courseSchema);
 
 // Create messageSchema object and model

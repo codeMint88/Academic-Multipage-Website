@@ -160,6 +160,7 @@ searchButton.addEventListener("click", (event) => {
   if (!searchInput.value.trim()) {
     event.preventDefault(); // Prevent form submission
   }
+  // The exclamation mark (!) is the logical NOT operator in JavaScript. It reverses the truthiness of a value. In this case, it's used to check if the trimmed value is falsy. If the trimmed value is an empty string or contains only whitespace, it's considered falsy.
 });
 
 searchButton.addEventListener("click", () => {

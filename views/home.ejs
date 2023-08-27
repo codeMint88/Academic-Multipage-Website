@@ -28,43 +28,37 @@
         <div class="article_container">
           <article>
             <figure>
-              <img src="/image/course1.jpg" alt="course image">
+              <img src="<%= courseData[0].image %>" alt="course image">
               <figcaption class="sr-only">Courses</figcaption>
             </figure>
             <div class="popular_course_details">
-              <h3>Internet Application Development </h3>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, totam. Quisquam nulla voluptatem tempora eum recusandae. Fugiat dolorum amet quasi consectetur ipsa, sed minus natus distinctio, ex.
-              </p>
-              <a href="#" class="btn_origin btn-primary">Learn More</a>
+              <h3> <%= courseData[0].title %> </h3>
+              <p> <%= courseData[0].description.substring(0, 200) + " >>>" %> </p>
+              <a href="/posts/<%= courseData[0].id %>" class="btn_origin btn-primary">Learn More</a>
+            </div>
+          </article>   
+
+          <article>
+            <figure>
+              <img src="<%= courseData[1].image %>" alt="course image">
+              <figcaption class="sr-only">Courses</figcaption>
+            </figure>
+            <div class="popular_course_details">
+              <h3> <%= courseData[1].title %> </h3>
+              <p> <%= courseData[1].description.substring(0, 200) + " >>>" %> </p>
+              <a href="/posts/<%= courseData[1].id %>" class="btn_origin btn-primary">Learn More</a>
             </div>
           </article>
 
           <article>
             <figure>
-              <img src="/image/course2.jpg" alt="course image">
+              <img src=" <%= courseData[5].image %> " alt="course image">
               <figcaption class="sr-only">Courses</figcaption>
             </figure>
             <div class="popular_course_details">
-              <h3>Responsive Website Design </h3>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, totam. Quisquam nulla voluptatem tempora eum recusandae. Fugiat dolorum amet quasi consectetur ipsa, sed minus natus distinctio, ex.
-              </p>
-              <a href="#" class="btn_origin btn-primary">Learn More</a>
-            </div>
-          </article>
-
-          <article>
-            <figure>
-              <img src="/image/course3.jpg" alt="course image">
-              <figcaption class="sr-only">Courses</figcaption>
-            </figure>
-            <div class="popular_course_details">
-              <h3>Data Management and Analytics </h3>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, totam. Quisquam nulla voluptatem tempora eum recusandae. Fugiat dolorum amet quasi consectetur ipsa, sed minus natus distinctio, ex.
-              </p>
-              <a href="#" class="btn_origin btn-primary">Learn More</a>
+              <h3> <%= courseData[5].title %> </h3>
+              <p> <%= courseData[5].description.substring(0, 200) + " >>>" %> </p>
+              <a href="/posts/<%= courseData[5].id %>" class="btn_origin btn-primary">Learn More</a>
             </div>
           </article>
         </div>

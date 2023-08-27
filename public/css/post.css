@@ -60,12 +60,6 @@
   margin-left: 3rem;
 }
 
-@media only screen and (width < 1200px) {
-  .timeline .content ul {
-    margin-left: 0;
-  }
-}
-
 .timeline .content li {
   list-style: disc;
 }
@@ -83,6 +77,10 @@
 }
 
 @media only screen and (width <= 600px) {
+  .timeline .content ul {
+    margin-left: 1rem;
+  }
+
   .apply_btn {
     padding: 0.4rem 0.8rem;
     font-size: 0.9rem;

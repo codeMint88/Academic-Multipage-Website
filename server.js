@@ -8,7 +8,7 @@ require("dotenv").config();
 const corsOptions = require("./config/corsOptions");
 const { logger } = require("./middleware/logEvents");
 const errorHandler = require("./middleware/errorHandler");
-const PORT = process.env.PORT || 3500;
+const PORT = process.env.PORT || 3000;
 
 // Set up Database
 const mongoose = require("mongoose");
@@ -32,24 +32,31 @@ db.on("error", (err) => {
 app.set("view engine", "ejs");
 
 // custom middleware logger
+
 app.use(logger);
 
 // Cross Origin Resource Sharing
-app.use(cors(corsOptions));
+// I disconneted cors because it is not necessary for now. Our frontend and backend are served by express. I will activate the cors middleware if there is a frontend app that needs to make cross-origin requests to this server.
+
+// app.use(cors(corsOptions));
 
 // built-in middleware to handle urlencoded form data
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // built-in middleware for json
+
 app.use(express.json());
 
-//serve static files
-// app.use(express.static(path.join(__dirname, "/public")));
-app.use("/", express.static(path.join(__dirname, "/public")));
-app.use("/posts", express.static(path.join(__dirname, "/public")));
-app.use("/", express.static(path.join(__dirname, "/uploads")));
+// Serve static files from the public directory for root and /posts routes
+app.use("/", express.static(path.join(__dirname, "public")));
+app.use("/posts", express.static(path.join(__dirname, "public")));
+
+// Serve static files from the uploads directory for all routes
+app.use("/", express.static(path.join(__dirname, "uploads")));
 
 // routes
+
 app.use("/", require("./routes/root"));
 app.use("/posts", require("./routes/api/posts"));
 
