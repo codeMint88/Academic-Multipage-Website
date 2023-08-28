@@ -1495,30 +1495,30 @@ Staff Section
   }
 
 	.staff_container .picture { 
-    background: url("/Image/Teacher2.jpg") no-repeat center top/cover;
+    background: url("../image/Teacher2.jpg") no-repeat center top/cover;
     width: 260px;
     height: 180px;
     background-position-y: -5px;
     }
   
   .staff_1 .picture {
-    background-image: url("/Image/pexels-cottonbro_400x300.jpg");
+    background-image: url("../image/pexels-cottonbro_400x300.jpg");
   }
 
   .staff_2 .picture {
-    background-image: url("/Image/Teacher2.jpg");
+    background-image: url("../image/Teacher2.jpg");
   }
 
   .staff_3 .picture {
-    background-image: url("/Image/Soibi_400x300.jpg");
+    background-image: url("../image/Soibi_400x300.jpg");
   }
 
   .staff_4 .picture {
-    background-image: url("/Image/Lady_colours_400x300.jpg");
+    background-image: url("../image/Lady_colours_400x300.jpg");
   }
 
   .staff_5 .picture {
-    background-image: url("/Image/Lady_korea_400x300.jpg");
+    background-image: url("../image/Lady_korea_400x300.jpg");
   }
   
   .staff_container .details {
