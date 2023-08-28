@@ -1434,19 +1434,19 @@ Staff Section
   }
 
   .staff_1 .picture {
-    background-image: url("/Image/pexels-cottonbro_1080x1620.jpg");
+    background-image: url("../image/pexels-cottonbro_1080x1620.jpg");
   }
   .staff_2 .picture {
-    background-image: url("/Image/Teacher1.jpg");
+    background-image: url("../image/Teacher1.jpg");
   }
   .staff_3 .picture {
-    background-image: url("/Image/Soibi_1080x1620.jpg");
+    background-image: url("../image/Soibi_1080x1620.jpg");
   }
   .staff_4 .picture {
-    background-image: url("/Image/Lady_colours_1080x1620.jpg");
+    background-image: url("../image/Lady_colours_1080x1620.jpg");
   }
   .staff_5 .picture {
-    background-image: url("/Image/Lady_korea_1080x1623.jpg");
+    background-image: url("../image/Lady_korea_1080x1623.jpg");
   }
 
 
